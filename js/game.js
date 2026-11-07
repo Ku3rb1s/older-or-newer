@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.3.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.3.1', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -403,6 +403,8 @@ function show(id) {
 function renderHome() {
   const segOn = (id, v) => $$(`#${id} button`).forEach(b => b.classList.toggle('on', b.dataset.v === v));
   segOn('setPool', opt.pool); segOn('setDiff', opt.diff); segOn('setMode', opt.mode);
+  // Titel: „Älter“ rot, „neuer“ grün – Satzbau je Sprache über den Platzhalter-Text
+  $('#homeTitle').innerHTML = tx('{a} oder {b}?', { a: `<span class="t-old">${esc(tx('Älter'))}</span>`, b: `<span class="t-new">${esc(tx('neuer'))}</span>` });
   $('#modeInfo').textContent = tx(MODE_INFO[opt.mode]);
   $('#diffInfo').textContent = tx(DIFF_INFO[opt.diff]);
   const best = LS.get(bestKey(), 0);

@@ -5,6 +5,7 @@
   name: "Norsk",
   flag: "🇳🇴",
   dict: {
+    "{a} oder {b}?": "{a} eller {b}?",
     "Alle Songs, ab 1 Jahr Abstand – und nur 10 Sekunden pro Song.": "Alle sanger, fra 1 års avstand – og bare 10 sekunder per sang.",
     "Alle Songs, oft nur 2 oder 3 Jahre auseinander.": "Alle sanger, ofte bare 2 eller 3 år imellom.",
     "Bekannte Songs, mindestens 5 Jahre auseinander.": "Kjente sanger, minst 5 år imellom.",

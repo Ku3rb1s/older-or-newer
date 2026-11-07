@@ -5,6 +5,7 @@
   name: "Español",
   flag: "🇪🇸",
   dict: {
+    "{a} oder {b}?": "¿{a} o {b}?",
     "Alle Songs, ab 1 Jahr Abstand – und nur 10 Sekunden pro Song.": "Todas las canciones, desde 1 año de diferencia, y solo 10 segundos por canción.",
     "Alle Songs, oft nur 2 oder 3 Jahre auseinander.": "Todas las canciones, a menudo con solo 2 o 3 años de diferencia.",
     "Bekannte Songs, mindestens 5 Jahre auseinander.": "Canciones conocidas, con al menos 5 años de diferencia.",

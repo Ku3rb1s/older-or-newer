@@ -5,6 +5,7 @@
   name: "English",
   flag: "🇬🇧",
   dict: {
+    "{a} oder {b}?": "{a} or {b}?",
     "Alle Songs, ab 1 Jahr Abstand – und nur 10 Sekunden pro Song.": "All songs, from 1 year apart – and only 10 seconds per song.",
     "Alle Songs, oft nur 2 oder 3 Jahre auseinander.": "All songs, often just 2 or 3 years apart.",
     "Bekannte Songs, mindestens 5 Jahre auseinander.": "Well-known songs, at least 5 years apart.",

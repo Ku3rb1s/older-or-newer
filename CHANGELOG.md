@@ -1,5 +1,9 @@
 # Neuerungen
 
+## 1.3.1 – 07.11.2026
+- Titel „Älter oder neuer?“ in klaren Farben statt Verlauf: „Älter“ rot, „neuer“ grün
+- Jukebox zeigt neue Logos sofort (Icon-Adresse mit Versionsnummer)
+
 ## 1.3.0 – 07.11.2026
 - Neues Logo **„Zeitstrahl“**: Zeitleiste als Doppelpfeil von früher (rot) bis heute (grün), die Platte sitzt als Regler darauf
 - Neue Farben: **Rot = älter, Grün = neuer** – auf Knöpfen, Titel und Platte

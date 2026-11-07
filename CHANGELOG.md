@@ -1,5 +1,9 @@
 # Neuerungen
 
+## 1.4.1 – 07.11.2026
+- **Ergebnis als Bild teilen:** „Teilen“ schickt jetzt ein Bild mit deiner Serie, der Kästchenreihe und deiner Zeitreise mit (am PC wird das Bild gespeichert und der Text kopiert)
+- In den Einstellungen siehst du jetzt, ob „Auf allen Geräten spielen“ verbunden ist – der Code wird in der Jukebox angelegt
+
 ## 1.4.0 – 07.11.2026
 - Neu: **Auf allen Geräten spielen** – mit einem persönlichen Code aus der Jukebox werden Rekorde, Statistik, Tages-Challenge und Profil zwischen Handy, Tablet und PC abgeglichen. Ohne Konto, verschlüsselt mit deinem Code
 

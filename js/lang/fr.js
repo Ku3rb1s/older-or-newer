@@ -5,6 +5,13 @@
   name: "Français",
   flag: "🇫🇷",
   dict: {
+    "Schaffst du mehr?": "Tu fais mieux ?",
+    "Bild gespeichert, Text kopiert": "Image enregistrée, texte copié",
+    "Zeitreise {a} – {b}": "Voyage dans le temps {a} – {b}",
+    "Auf allen Geräten spielen": "Jouer sur tous tes appareils",
+    "Auf allen Geräten verbunden": "Connecté sur tous tes appareils",
+    "Code {c} · ändern in der Jukebox": "Code {c} · à modifier dans le Jukebox",
+    "Rekorde, Serie und Profil mit einem Code mitnehmen": "Emporte records, série et profil avec un code",
     "Alle Songs, ab 1 Jahr Abstand – und nur 10 Sekunden pro Song.": "Tous les morceaux, dès 1 an d’écart – et seulement 10 secondes par morceau.",
     "Alle Songs, oft nur 2 oder 3 Jahre auseinander.": "Tous les morceaux, souvent à 2 ou 3 ans d’écart seulement.",
     "Bekannte Songs, mindestens 5 Jahre auseinander.": "Morceaux connus, au moins 5 ans d’écart.",

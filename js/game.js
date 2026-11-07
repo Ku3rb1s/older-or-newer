@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.4.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.4.1', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -333,11 +333,55 @@ function shareText() {
   const row = '🟩'.repeat(Math.min(n, 20)) + (n > 20 ? '…' : '') + (G.miss ? '🟥' : '');
   return `Older or Newer 🎵 ${tx('Serie {n}', { n })} 🔥\n${modeLabel()}\n${row}\n${SITE}`;
 }
+/* ---------- Ergebnisbild zum Teilen (1080 × 1350, Hochformat für Story/Status) ----------
+   Gezeichnet auf einem Canvas: Logo, Serie, Kästchenreihe, Zeitreise (ältester bis neuester Song), Modus und Link. */
+const loadImg = src => new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; });
+async function shareImage() {
+  const W = 1080, H = 1350, n = G.streak;
+  try { await document.fonts.load('900 80px Outfit'); await document.fonts.load('600 40px Outfit'); } catch {}
+  const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  const x = cv.getContext('2d');
+  // Hintergrund wie das Logo: dunkel, links rot (früher), rechts grün (heute)
+  let g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#1d2028'); g.addColorStop(1, '#0b0c10');
+  x.fillStyle = g; x.fillRect(0, 0, W, H);
+  for (const [cx, col] of [[0, 'rgba(239,68,68,.30)'], [W, 'rgba(34,197,94,.30)']]) {
+    g = x.createRadialGradient(cx, H * .45, 30, cx, H * .45, 800); g.addColorStop(0, col); g.addColorStop(1, 'rgba(0,0,0,0)');
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+  }
+  const Fo = (w, s) => `${w} ${s}px Outfit, system-ui, sans-serif`;
+  const center = (t, y, font, color) => { x.font = font; x.fillStyle = color; x.textAlign = 'center'; x.fillText(t, W / 2, y); };
+  try { const logo = await loadImg('icon-192.png?v=4'); x.save(); x.beginPath(); x.roundRect(W / 2 - 250, 90, 96, 96, 24); x.clip(); x.drawImage(logo, W / 2 - 250, 90, 96, 96); x.restore(); } catch {}
+  x.font = Fo(900, 64); x.fillStyle = '#fff'; x.textAlign = 'left'; x.fillText('Older or Newer', W / 2 - 130, 160);
+  center(modeLabel(), 262, Fo(600, 38), '#b4b8c4');
+  // Große Serien-Zahl
+  center(tx('Deine Serie'), 380, Fo(800, 40), '#86efac');
+  g = x.createLinearGradient(0, 400, 0, 640); g.addColorStop(0, '#ffffff'); g.addColorStop(1, '#d1fae5');
+  center(fmtN(n), 620, Fo(900, 260), g);
+  // Kästchenreihe: grün je richtigem Tipp (bis 20), rot für den Fehler
+  const cells = [...Array(Math.min(n, 20)).fill('#22c55e'), ...(G.miss ? ['#ef4444'] : [])];
+  const size = cells.length > 15 ? 38 : 50, gap = 10, total = cells.length * size + Math.max(0, cells.length - 1) * gap, x0 = (W - total) / 2;
+  cells.forEach((col, i) => { x.fillStyle = col; x.beginPath(); x.roundRect(x0 + i * (size + gap), 700, size, size, 11); x.fill(); });
+  // Zeitreise: ältester bis neuester Song der Serie
+  const ys = G.chain.map(s => s.y);
+  if (ys.length > 1) center(tx('Zeitreise {a} – {b}', { a: Math.min(...ys), b: Math.max(...ys) }), 850, Fo(700, 46), '#f4f4f6');
+  if (G.miss) center(`${G.miss.next.t} · ${G.miss.next.y}`, 915, Fo(500, 34), '#a1a1aa');
+  x.fillStyle = 'rgba(255,255,255,.06)'; x.beginPath(); x.roundRect(120, 1080, W - 240, 150, 40); x.fill();
+  x.strokeStyle = 'rgba(134,239,172,.55)'; x.lineWidth = 3; x.stroke();
+  center(tx('Schaffst du mehr?'), 1145, Fo(800, 46), '#86efac');
+  center('ku3rb1s.github.io/older-or-newer', 1198, Fo(600, 34), '#b4b8c4');
+  return new Promise(r => cv.toBlob(r, 'image/jpeg', .9));
+}
 async function shareResult() {
   const text = shareText();
+  let file = null;
+  try { const blob = await shareImage(); if (blob) file = new File([blob], 'older-or-newer.jpg', { type: 'image/jpeg' }); } catch {}
   try {
-    if (navigator.share) await navigator.share({ text });
-    else { await navigator.clipboard.writeText(text); toast(tx('Ergebnis kopiert')); }
+    if (file && navigator.canShare?.({ files: [file] })) return await navigator.share({ files: [file], text });
+    if (navigator.share && !file) return await navigator.share({ text });
+    // Desktop ohne Bild-Teilen: Bild speichern und Text kopieren
+    if (file) { const a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = file.name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); }
+    await navigator.clipboard?.writeText(text);
+    toast(file ? tx('Bild gespeichert, Text kopiert') : tx('Ergebnis kopiert'));
   } catch { /* abgebrochen */ }
 }
 
@@ -436,7 +480,11 @@ function renderSettings() {
   applyTheme(); applyVol();
 }
 function renderProfile() {
-  const p = Profile.get();
+  const p = Profile.get(), s = Sync.status();
+  // Abgleich zwischen Geräten (Code wird in der Jukebox angelegt) – wie in Needle Drop und Gold Record
+  $('#syncTitle').textContent = s.connected ? tx('Auf allen Geräten verbunden') : tx('Auf allen Geräten spielen');
+  $('#syncSub').textContent = s.connected ? tx('Code {c} · ändern in der Jukebox', { c: s.code }) : tx('Rekorde, Serie und Profil mit einem Code mitnehmen');
+  $('#syncIc').style.background = s.connected ? 'linear-gradient(135deg,#10b981,#0ea5e9)' : 'linear-gradient(135deg,#ff4f86,#fbbf24)';
   $('#profEmoji').textContent = p.emoji;
   if (document.activeElement !== $('#profName')) $('#profName').value = p.name;
 }

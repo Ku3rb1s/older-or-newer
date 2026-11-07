@@ -5,6 +5,13 @@
   name: "Norsk",
   flag: "🇳🇴",
   dict: {
+    "Schaffst du mehr?": "Klarer du mer?",
+    "Bild gespeichert, Text kopiert": "Bilde lagret, tekst kopiert",
+    "Zeitreise {a} – {b}": "Tidsreise {a} – {b}",
+    "Auf allen Geräten spielen": "Spill på alle enhetene dine",
+    "Auf allen Geräten verbunden": "Koblet på alle enhetene dine",
+    "Code {c} · ändern in der Jukebox": "Kode {c} · endre i Jukebox",
+    "Rekorde, Serie und Profil mit einem Code mitnehmen": "Ta med rekorder, rekke og profil med en kode",
     "Alle Songs, ab 1 Jahr Abstand – und nur 10 Sekunden pro Song.": "Alle sanger, fra 1 års avstand – og bare 10 sekunder per sang.",
     "Alle Songs, oft nur 2 oder 3 Jahre auseinander.": "Alle sanger, ofte bare 2 eller 3 år imellom.",
     "Bekannte Songs, mindestens 5 Jahre auseinander.": "Kjente sanger, minst 5 år imellom.",

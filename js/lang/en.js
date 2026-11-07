@@ -5,6 +5,13 @@
   name: "English",
   flag: "🇬🇧",
   dict: {
+    "Schaffst du mehr?": "Can you beat it?",
+    "Bild gespeichert, Text kopiert": "Image saved, text copied",
+    "Zeitreise {a} – {b}": "Time travel {a} – {b}",
+    "Auf allen Geräten spielen": "Play on all your devices",
+    "Auf allen Geräten verbunden": "Synced across your devices",
+    "Code {c} · ändern in der Jukebox": "Code {c} · change it in the Jukebox",
+    "Rekorde, Serie und Profil mit einem Code mitnehmen": "Take records, streak and profile with you using a code",
     "Alle Songs, ab 1 Jahr Abstand – und nur 10 Sekunden pro Song.": "All songs, from 1 year apart – and only 10 seconds per song.",
     "Alle Songs, oft nur 2 oder 3 Jahre auseinander.": "All songs, often just 2 or 3 years apart.",
     "Bekannte Songs, mindestens 5 Jahre auseinander.": "Well-known songs, at least 5 years apart.",

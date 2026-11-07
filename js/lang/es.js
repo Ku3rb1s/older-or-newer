@@ -5,6 +5,13 @@
   name: "Español",
   flag: "🇪🇸",
   dict: {
+    "Schaffst du mehr?": "¿Puedes superarlo?",
+    "Bild gespeichert, Text kopiert": "Imagen guardada, texto copiado",
+    "Zeitreise {a} – {b}": "Viaje en el tiempo {a} – {b}",
+    "Auf allen Geräten spielen": "Juega en todos tus dispositivos",
+    "Auf allen Geräten verbunden": "Conectado en todos tus dispositivos",
+    "Code {c} · ändern in der Jukebox": "Código {c} · cámbialo en el Jukebox",
+    "Rekorde, Serie und Profil mit einem Code mitnehmen": "Llévate récords, racha y perfil con un código",
     "Alle Songs, ab 1 Jahr Abstand – und nur 10 Sekunden pro Song.": "Todas las canciones, desde 1 año de diferencia, y solo 10 segundos por canción.",
     "Alle Songs, oft nur 2 oder 3 Jahre auseinander.": "Todas las canciones, a menudo con solo 2 o 3 años de diferencia.",
     "Bekannte Songs, mindestens 5 Jahre auseinander.": "Canciones conocidas, con al menos 5 años de diferencia.",

@@ -152,7 +152,6 @@
     "Dein Code": "Koden din",
     "Auf anderen Geräten weiterspielen": "Spill videre på andre enheter",
     "Noch nicht gesichert – in der Jukebox sichern": "Ikke lagret ennå – lagre den i Jukebox",
-    "Code {c} · verwalten in der Jukebox": "Kode {c} · administreres i Jukebox",
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Ta med rekorder, rekker og profil med en kode – uten e-post og passord",
     "Avatar wählen": "Velg avatar",
     "Tiere": "Dyr",
@@ -161,5 +160,6 @@
     "Zur Jukebox": "Til Jukebox",
     "<b>Tipp:</b> Logo gedrückt halten – zur Jukebox und zu den anderen Spielen.": "<b>Tips:</b> Hold inne logoen – til Jukebox og de andre spillene.",
     "Dein Profil gilt für alle Spiele der Jukebox.": "Profilen din gjelder for alle spillene i Jukebox.",
+    "Abgeglichen · verwalten in der Jukebox": "Synkronisert · administreres i Jukebox",
   },
 };

@@ -152,7 +152,6 @@
     "Dein Code": "Ton code",
     "Auf anderen Geräten weiterspielen": "Continuer sur d’autres appareils",
     "Noch nicht gesichert – in der Jukebox sichern": "Pas encore sauvegardé – sauvegarde-le dans la Jukebox",
-    "Code {c} · verwalten in der Jukebox": "Code {c} · à gérer dans la Jukebox",
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Emporte records, séries et profil avec un code – sans e-mail ni mot de passe",
     "Avatar wählen": "Choisir un avatar",
     "Tiere": "Animaux",
@@ -161,5 +160,6 @@
     "Zur Jukebox": "Vers la Jukebox",
     "<b>Tipp:</b> Logo gedrückt halten – zur Jukebox und zu den anderen Spielen.": "<b>Astuce :</b> maintiens le logo appuyé – vers la Jukebox et les autres jeux.",
     "Dein Profil gilt für alle Spiele der Jukebox.": "Ton profil vaut pour tous les jeux de la Jukebox.",
+    "Abgeglichen · verwalten in der Jukebox": "Synchronisé · à gérer dans la Jukebox",
   },
 };

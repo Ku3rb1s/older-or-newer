@@ -152,7 +152,6 @@
     "Dein Code": "Your code",
     "Auf anderen Geräten weiterspielen": "Keep playing on other devices",
     "Noch nicht gesichert – in der Jukebox sichern": "Not saved yet – save it in the Jukebox",
-    "Code {c} · verwalten in der Jukebox": "Code {c} · manage it in the Jukebox",
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Take records, streaks and profile with you using a code – no email, no password",
     "Avatar wählen": "Choose avatar",
     "Tiere": "Animals",
@@ -161,5 +160,6 @@
     "Zur Jukebox": "To the Jukebox",
     "<b>Tipp:</b> Logo gedrückt halten – zur Jukebox und zu den anderen Spielen.": "<b>Tip:</b> Press and hold the logo – to the Jukebox and the other games.",
     "Dein Profil gilt für alle Spiele der Jukebox.": "Your profile applies to all Jukebox games.",
+    "Abgeglichen · verwalten in der Jukebox": "Synced · manage it in the Jukebox",
   },
 };

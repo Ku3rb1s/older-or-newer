@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.8 – 07.11.2026
+- Einstellungen: Dein Code steht nicht mehr offen da („✓ Abgeglichen · verwalten in der Jukebox“) – den Code selbst gibt es nur im Fenster „Dein Code“ der Jukebox
+
 ## 1.6.7 – 07.11.2026
 - 16 Jahreszahlen korrigiert (z. B. Smells Like Teen Spirit 1991, Lose Yourself 2002, Umbrella 2007, Uptown Funk 2014)
 - Einstellungen: Hinweis zum Profil korrigiert („gilt für alle Spiele der Jukebox“)

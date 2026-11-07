@@ -152,7 +152,6 @@
     "Dein Code": "Tu código",
     "Auf anderen Geräten weiterspielen": "Seguir jugando en otros dispositivos",
     "Noch nicht gesichert – in der Jukebox sichern": "Aún sin guardar: guárdalo en la Jukebox",
-    "Code {c} · verwalten in der Jukebox": "Código {c} · gestiónalo en la Jukebox",
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Llévate récords, rachas y perfil con un código, sin correo ni contraseña",
     "Avatar wählen": "Elegir avatar",
     "Tiere": "Animales",
@@ -161,5 +160,6 @@
     "Zur Jukebox": "A la Jukebox",
     "<b>Tipp:</b> Logo gedrückt halten – zur Jukebox und zu den anderen Spielen.": "<b>Consejo:</b> mantén pulsado el logo para ir a la Jukebox y a los demás juegos.",
     "Dein Profil gilt für alle Spiele der Jukebox.": "Tu perfil vale para todos los juegos de la Jukebox.",
+    "Abgeglichen · verwalten in der Jukebox": "Sincronizado · gestiónalo en la Jukebox",
   },
 };

@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.6.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.6.1', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -593,7 +593,7 @@ sheet.addEventListener('click', e => { const g = e.target.closest('[data-go]'); 
 sheet.addEventListener('click', e => { if (e.target === sheet || e.target.closest('[data-close]')) sheet.close(); });
 sheet.addEventListener('close', () => { if (!$('#home').classList.contains('hidden')) renderHome(); });
 $('#navBack').onclick = () => goPage('main', true);
-$('#profEmoji').onclick = () => { $('#profEmoji').textContent = Profile.nextEmoji(); };
+$('#profEmoji').onclick = () => Profile.pick(e => { $('#profEmoji').textContent = e; });   // Auswahl-Fenster (js/profile.js)
 $('#profName').oninput = () => Profile.set({ name: $('#profName').value });
 $('#profName').onkeydown = e => { if (e.key === 'Enter') $('#profName').blur(); };
 $('#setAuto').onchange = e => { opt.auto = e.target.checked; LS.set('auto', opt.auto); renderSettings(); };

@@ -160,5 +160,9 @@
     "Noch nicht gesichert – in der Jukebox sichern": "Pas encore sauvegardé – sauvegarde-le dans la Jukebox",
     "Code {c} · verwalten in der Jukebox": "Code {c} · à gérer dans la Jukebox",
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Emporte records, séries et profil avec un code – sans e-mail ni mot de passe",
+    "Avatar wählen": "Choisir un avatar",
+    "Tiere": "Animaux",
+    "Musik": "Musique",
+    "Sonstiges": "Divers",
   },
 };

@@ -160,5 +160,9 @@
     "Noch nicht gesichert – in der Jukebox sichern": "Not saved yet – save it in the Jukebox",
     "Code {c} · verwalten in der Jukebox": "Code {c} · manage it in the Jukebox",
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Take records, streaks and profile with you using a code – no email, no password",
+    "Avatar wählen": "Choose avatar",
+    "Tiere": "Animals",
+    "Musik": "Music",
+    "Sonstiges": "Other",
   },
 };

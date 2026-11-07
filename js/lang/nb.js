@@ -160,5 +160,9 @@
     "Noch nicht gesichert – in der Jukebox sichern": "Ikke lagret ennå – lagre den i Jukebox",
     "Code {c} · verwalten in der Jukebox": "Kode {c} · administreres i Jukebox",
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Ta med rekorder, rekker og profil med en kode – uten e-post og passord",
+    "Avatar wählen": "Velg avatar",
+    "Tiere": "Dyr",
+    "Musik": "Musikk",
+    "Sonstiges": "Annet",
   },
 };

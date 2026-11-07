@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.1 – 07.11.2026
+- Mehr Avatare: rund 95 Emojis zur Auswahl, davon über 50 Tiere. Ein Tipp auf den Avatar öffnet jetzt ein Auswahl-Fenster (Tiere, Musik, Sonstiges) – gilt in allen Jukebox-Spielen
+
 ## 1.6.0 – 07.11.2026
 - Original-Cover statt Sampler-Cover: Bei rund 60 Songs zeigte die Karte das Cover einer Hit-Compilation. Jetzt erscheint das Cover der Original-Single bzw. des Originalalbums (aus MusicBrainz/Cover Art Archive). Lädt ein Original-Cover nicht schnell genug, kommt wie bisher das Deezer-Cover
 

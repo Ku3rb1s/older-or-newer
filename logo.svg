@@ -1,43 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Older or Newer – „Zeitreise“: Platte als Uhr. Oben Pfeil nach rechts (türkis = neuer, vorwärts),
-       unten Pfeil nach links (gold = älter, zurück) -->
+  <!-- Older or Newer – „Zeitstrahl“: Zeitleiste als Doppelpfeil von früher (rot, links) bis heute (grün, rechts),
+       die Platte sitzt als Regler darauf -->
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d3b3c"/><stop offset=".55" stop-color="#0b1a20"/><stop offset="1" stop-color="#2b1d05"/></linearGradient>
-    <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset=".55" stop-color="#2dd4bf" stop-opacity=".22"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></radialGradient>
-    <linearGradient id="neu" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#99f6e4"/><stop offset="1" stop-color="#14b8a6"/></linearGradient>
-    <linearGradient id="alt" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#eab308"/></linearGradient>
-    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#0d9488"/></linearGradient>
-    <marker id="hn" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#14b8a6"/></marker>
-    <marker id="ha" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#eab308"/></marker>
-    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity=".5"/></filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d2028"/><stop offset="1" stop-color="#0b0c10"/></linearGradient>
+    <radialGradient id="gr" cx="0" cy=".5" r=".75"><stop offset="0" stop-color="#ef4444" stop-opacity=".32"/><stop offset="1" stop-color="#ef4444" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gg" cx="1" cy=".5" r=".75"><stop offset="0" stop-color="#22c55e" stop-opacity=".32"/><stop offset="1" stop-color="#22c55e" stop-opacity="0"/></radialGradient>
+    <linearGradient id="tl" x1="30" y1="0" x2="482" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f87171"/><stop offset=".22" stop-color="#ef4444"/><stop offset=".78" stop-color="#22c55e"/><stop offset="1" stop-color="#4ade80"/>
+    </linearGradient>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity=".55"/></filter>
   </defs>
   <rect width="512" height="512" fill="url(#bg)"/>
-  <circle cx="256" cy="256" r="230" fill="url(#glow)"/>
+  <rect width="512" height="512" fill="url(#gr)"/>
+  <rect width="512" height="512" fill="url(#gg)"/>
 
-  <!-- Pfeile: Bögen um die Platte (r = 198) -->
-  <g fill="none" stroke-width="28" stroke-linecap="round">
-    <path d="M70 188A198 198 0 0 1 430 176" stroke="url(#neu)" marker-end="url(#hn)"/>
-    <path d="M442 324A198 198 0 0 1 82 336" stroke="url(#alt)" marker-end="url(#ha)"/>
-  </g>
+  <!-- Zeitleiste: Doppelpfeil -->
+  <path d="M100 232H412V190L486 256L412 322V280H100V322L26 256L100 190Z" fill="url(#tl)" stroke="#0b0c10" stroke-width="6" stroke-linejoin="round"/>
 
-  <!-- Platte -->
-  <g filter="url(#sh)"><circle cx="256" cy="256" r="150" fill="#0d0d11"/></g>
-  <g fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="2">
-    <circle cx="256" cy="256" r="138"/><circle cx="256" cy="256" r="124"/><circle cx="256" cy="256" r="110"/><circle cx="256" cy="256" r="96"/>
+  <!-- Platte als Regler -->
+  <g filter="url(#sh)"><circle cx="256" cy="256" r="140" fill="#0d0d11"/></g>
+  <g fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="2.5">
+    <circle cx="256" cy="256" r="126"/><circle cx="256" cy="256" r="110"/><circle cx="256" cy="256" r="94"/><circle cx="256" cy="256" r="78"/>
   </g>
-  <path d="M256 256 L150 150 A150 150 0 0 1 196 118 Z" fill="#fff" fill-opacity=".07"/>
-  <path d="M256 256 L362 362 A150 150 0 0 1 316 394 Z" fill="#fff" fill-opacity=".07"/>
-
-  <!-- Etikett als Zifferblatt -->
-  <circle cx="256" cy="256" r="80" fill="url(#face)"/>
-  <g stroke="#063b37" stroke-width="7" stroke-linecap="round">
-    <path d="M256 186v14M256 312v14M186 256h14M312 256h14"/>
-  </g>
-  <g stroke="#063b37" stroke-width="4" stroke-linecap="round" stroke-opacity=".6">
-    <path d="M291 195.4l-4 7M325 221l-7 4M325 291l-7-4M291 316.6l-4-7M221 316.6l4-7M187 291l7-4M187 221l7 4M221 195.4l4 7"/>
-  </g>
-  <g stroke="#0b1416" stroke-width="12" stroke-linecap="round">
-    <path d="M256 256V208"/><path d="M256 256l36 20"/>
-  </g>
-  <circle cx="256" cy="256" r="11" fill="#eab308" stroke="#0b1416" stroke-width="4"/>
+  <path d="M256 256L158 157A140 140 0 0 1 203 126Z" fill="#fff" fill-opacity=".09"/>
+  <path d="M256 256L354 355A140 140 0 0 1 309 386Z" fill="#fff" fill-opacity=".09"/>
+  <!-- Etikett: linke Hälfte rot (älter), rechte grün (neuer) -->
+  <path d="M256 202A54 54 0 0 0 256 310Z" fill="#ef4444"/>
+  <path d="M256 202A54 54 0 0 1 256 310Z" fill="#22c55e"/>
+  <rect x="253" y="202" width="6" height="108" fill="#0d0d11"/>
+  <circle cx="256" cy="256" r="11" fill="#0d0d11"/>
 </svg>

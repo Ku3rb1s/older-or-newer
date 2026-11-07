@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.2.1', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.3.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -388,7 +388,7 @@ function confetti(n = 90) {
   if (!opt.sfx || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const box = document.createElement('div');
   box.className = 'confetti';
-  const colors = ['#2dd4bf', '#eab308', '#99f6e4', '#ffffff', '#fde68a'];
+  const colors = ['#22c55e', '#ef4444', '#facc15', '#ffffff', '#86efac'];
   box.innerHTML = Array.from({ length: n }, () => `<i style="left:${Math.random() * 100}%;background:${colors[Math.floor(Math.random() * colors.length)]};animation-duration:${1.8 + Math.random() * 1.6}s;animation-delay:${Math.random() * .4}s;transform:rotate(${Math.random() * 360}deg)"></i>`).join('');
   document.body.appendChild(box);
   setTimeout(() => box.remove(), 4200);

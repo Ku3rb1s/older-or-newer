@@ -1,6 +1,7 @@
 // Baut data/songs.json aus data/songs-src.txt: sucht zu jedem Song die passende Deezer-ID (für Vorschau und Cover).
 // Das Jahr kommt NICHT von Deezer (dort steht das Album-Jahr, bei Best-of-Alben falsch), sondern aus songs-src.txt.
-// Aufruf: node scripts/build-songs.js   (Node 18+, braucht Internet; ca. 1 Minute)
+// m: 1 = Song aus songs-auto.txt (Jahr von MusicBrainz).
+// Aufruf: node scripts/build-songs.js   (Node 18+, braucht Internet; ca. 2–4 Minuten)
 const fs = require('fs');
 const path = require('path');
 
@@ -22,12 +23,14 @@ async function deezer(q) {
 }
 
 (async () => {
-  const src = fs.readFileSync(path.join(__dirname, '..', 'data', 'songs-src.txt'), 'utf8')
+  // Handverlesene Liste zuerst (hat Vorrang), dann die automatisch erzeugte (scripts/build-auto.js), falls vorhanden
+  const read = f => { try { return fs.readFileSync(path.join(__dirname, '..', 'data', f), 'utf8'); } catch { return ''; } };
+  const src = (read('songs-src.txt') + '\n' + read('songs-auto.txt'))
     .split(/\r?\n/).map(l => l.trim()).filter(l => l && !l.startsWith('#'))
     .map(l => {
       const [y, a, t, extra = ''] = l.split('|').map(s => s.trim());
       const flags = extra.split(/\s+/);
-      return { y: +y, a, t, de: flags.includes('de'), dz: +(flags.find(f => f.startsWith('dz=')) || '').slice(3) || 0 };
+      return { y: +y, a, t, de: flags.includes('de'), auto: flags.includes('auto'), dz: +(flags.find(f => f.startsWith('dz=')) || '').slice(3) || 0 };
     });
   console.log(src.length, 'Songs in der Liste');
 
@@ -39,7 +42,7 @@ async function deezer(q) {
     const artistOk = t => { const x = norm(t.artist.name); return x === na || x.includes(na) || na.includes(x) && x.length > 2; };
     if (s.dz) {   // feste Deezer-ID aus der Liste
       const t = await (await fetch('https://api.deezer.com/track/' + s.dz)).json();
-      if (t.id && t.readable && t.preview) out.push({ id: t.id, t: s.t, a: s.a, y: s.y, ...(s.de ? { de: 1 } : {}), c: t.md5_image || '', r: t.rank });
+      if (t.id && t.readable && t.preview) out.push({ id: t.id, t: s.t, a: s.a, y: s.y, ...(s.de ? { de: 1 } : {}), ...(s.auto ? { m: 1 } : {}), c: t.md5_image || '', r: t.rank });
       else missing.push(`${s.y} | ${s.a} | ${s.t}  (dz=${s.dz} nicht abspielbar)`);
       await sleep(120);
       continue;

@@ -1,5 +1,10 @@
 # Neuerungen
 
+## 1.3.0 – 07.11.2026
+- Neues Logo **„Zeitstrahl“**: Zeitleiste als Doppelpfeil von früher (rot) bis heute (grün), die Platte sitzt als Regler darauf
+- Neue Farben: **Rot = älter, Grün = neuer** – auf Knöpfen, Titel und Platte
+- Richtig/falsch jetzt in **Gold mit ✓** bzw. **Grau mit ✗**, damit sich das nicht mit Rot/Grün der Knöpfe beißt
+
 ## 1.2.1 – 07.11.2026
 - Fehler behoben: Beim Titel „Älter oder neuer?“ waren die Pünktchen vom „Ä“ oben abgeschnitten
 - „Spielen“-Knopf in Türkis passend zum neuen Logo

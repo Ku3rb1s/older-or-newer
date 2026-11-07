@@ -5,7 +5,7 @@
   "description": "Älter oder neuer? Musik-Quiz wie Higher or Lower.",
   "lang": "de",
   "start_url": "/older-or-newer/",
-  "scope": "/older-or-newer/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#0c0c0f",

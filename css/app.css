@@ -178,3 +178,6 @@ html.ios .vol-game input,html.ios .vol-game #volVal{display:none}
 .timebar span{position:relative;display:block;text-align:center;font-size:.75rem;font-weight:800;line-height:22px;color:#0b1416;font-variant-numeric:tabular-nums}
 .timebar.urgent i{background:linear-gradient(90deg,#f59e0b,#f97316)}
 .timebar.urgent span{color:#fff}
+
+/* Links, die wie Einstellungs-Zeilen aussehen (z. B. „Alle Spiele“): nicht unterstreichen – wie in Needle Drop */
+a.cell{color:inherit;text-decoration:none}

@@ -156,6 +156,11 @@ html.ios .vol-game input,html.ios .vol-game #volVal{display:none}
 
 @media (max-width:640px){
   main{padding:0 12px calc(30px + var(--sab))}
+  /* Start und Ergebnis haben unten die schwebende Knopf-Leiste (.controls aus base.css, ca. 68 px hoch, plus Abstand
+     zum iPhone-Balken) – so viel Platz freihalten, sonst liegt sie beim Runterscrollen über dem Inhalt */
+  #home,#end{margin-bottom:calc(max(var(--sab), 6px) + 96px)}
+  /* Meldungen über der Leiste statt dahinter */
+  #toast{bottom:calc(max(var(--sab), 6px) + 92px)}
   .panel{padding:4px 12px 16px}
   .stage{padding:18px 14px 22px}
   .seg button small{font-size:.66rem}

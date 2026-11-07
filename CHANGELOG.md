@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.5.1 – 07.11.2026
+- iPhone/Handy: Die schwebende Knopf-Leiste (Spielen, Nochmal, Teilen) liegt beim Runterscrollen nicht mehr über dem Inhalt; Meldungen erscheinen über der Leiste
+
 ## 1.5.0 – 07.11.2026
 - **Über 2.100 Songs** statt rund 900: Hits aus den Deezer-Redaktions-Playlists (Jahrzehnte, Pop, Rap, R&B, Rock, EDM, Latin, aktuelle Charts, Deutschrap, Deutsch-Pop, Schlager, NDW) und dem Billionärs Club
 - Jahre doppelt geprüft: Ein neuer Song kommt nur rein, wenn **MusicBrainz und Deezer dasselbe Erscheinungsjahr** nennen

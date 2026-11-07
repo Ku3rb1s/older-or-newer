@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.4 – 07.11.2026
+- Spiele-Menü: neues Spiel **Hit or Miss** – Stimmt’s oder stimmt’s nicht? Musik-Quiz zum Wischen
+
 ## 1.6.3 – 07.11.2026
 - Spiele-Menü: Logo oben lange gedrückt halten (am Computer Rechtsklick) – zurück zur Jukebox oder direkt in ein anderes Spiel
 

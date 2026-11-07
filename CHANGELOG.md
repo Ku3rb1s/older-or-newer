@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.5.3 – 07.11.2026
+- iPhone/Handy: Ist ein Fenster offen (z. B. Einstellungen), scrollt die Seite dahinter nicht mehr mit; nach dem Schließen steht sie wieder an derselben Stelle
+
 ## 1.5.2 – 07.11.2026
 - Einstellungen: „Auf anderen Geräten weiterspielen“ bzw. „Dein Code“ statt „Auf allen Geräten“ – klarer, und mit Hinweis, wenn der Code noch nicht gesichert ist
 

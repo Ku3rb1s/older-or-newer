@@ -1,5 +1,10 @@
 # Neuerungen
 
+## 1.6.7 – 07.11.2026
+- 16 Jahreszahlen korrigiert (z. B. Smells Like Teen Spirit 1991, Lose Yourself 2002, Umbrella 2007, Uptown Funk 2014)
+- Einstellungen: Hinweis zum Profil korrigiert („gilt für alle Spiele der Jukebox“)
+- Spiele-Menü: Ist es offen, schließt ein Tipp aufs Logo nur das Menü (statt zur Startseite zu springen)
+
 ## 1.6.6 – 07.11.2026
 - Nach einem Update kommt die neue Version jetzt sofort – vorher konnte der Browser bis zu 10 Minuten lang noch die alte Seite zeigen
 

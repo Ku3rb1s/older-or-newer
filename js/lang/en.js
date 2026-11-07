@@ -59,7 +59,6 @@
     "Deezer nicht erreichbar": "Deezer can't be reached",
     "Deezer-Fehler: {m}": "Deezer error: {m}",
     "Dein Name": "Your name",
-    "Dein Profil gilt für alle Spiele der Jukebox. Es bleibt auf diesem Gerät.": "Your profile works in every Jukebox game. It stays on this device.",
     "Deine Serie": "Your streak",
     "Deine Statistik": "Your stats",
     "Deine Zeitreise": "Your time travel",
@@ -161,5 +160,6 @@
     "Sonstiges": "Other",
     "Zur Jukebox": "To the Jukebox",
     "<b>Tipp:</b> Logo gedrückt halten – zur Jukebox und zu den anderen Spielen.": "<b>Tip:</b> Press and hold the logo – to the Jukebox and the other games.",
+    "Dein Profil gilt für alle Spiele der Jukebox.": "Your profile applies to all Jukebox games.",
   },
 };

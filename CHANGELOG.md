@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.0 – 07.11.2026
+- Original-Cover statt Sampler-Cover: Bei rund 60 Songs zeigte die Karte das Cover einer Hit-Compilation. Jetzt erscheint das Cover der Original-Single bzw. des Originalalbums (aus MusicBrainz/Cover Art Archive). Lädt ein Original-Cover nicht schnell genug, kommt wie bisher das Deezer-Cover
+
 ## 1.5.5 – 07.11.2026
 - Fehler behoben: Ein Song, der schon einmal geladen war, spielte nach etwa 15 Minuten nicht mehr (iPhone: „The operation is not supported“) – Deezer-Links laufen ab. Jetzt wird ein abgelaufener Link automatisch neu geholt
 

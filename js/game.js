@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.5.5', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.6.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -58,7 +58,31 @@ const bestKey = () => `best2.${opt.pool}.${opt.diff}.${opt.mode}`;
 const modeLabel = () => [POOL_NAMES[opt.pool], DIFF_NAMES[opt.diff], MODE_NAMES[opt.mode]].map(s => tx(s)).join(' · ');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-const cover = (s, size = 500) => s.c ? `https://e-cdns-images.dzcdn.net/images/cover/${s.c}/${size}x${size}-000000-80-0-0.jpg` : '';
+// Cover: Deezer (md5) – oder "mb:<id>" aus data/covers.json = Original-Cover aus dem Cover Art Archive (MusicBrainz),
+// wenn Deezer den Song nur auf einem Sampler hat (Spiele-Hub/scripts/check-covers.js)
+const dzCover = (c, size) => `https://e-cdns-images.dzcdn.net/images/cover/${c}/${size}x${size}-000000-80-0-0.jpg`;
+const COVER_FALLBACK = new Map();   // Original-Cover-Adresse → bisheriges Deezer-Cover (falls archive.org gerade nicht liefert)
+const cover = (s, size = 500) => {
+  if (!s.c) return '';
+  if (!s.c.startsWith('mb:')) return dzCover(s.c, size);
+  const url = `https://coverartarchive.org/release-group/${s.c.slice(3)}/front-${size <= 250 ? 250 : 500}`;
+  if (s.c0) COVER_FALLBACK.set(url, dzCover(s.c0, size));
+  return url;
+};
+// Lädt ein Original-Cover nicht (archive.org langsam oder überlastet), springt das Bild auf das Deezer-Cover zurück
+addEventListener('error', e => { const i = e.target; if (i?.tagName === 'IMG' && COVER_FALLBACK.has(i.src)) i.src = COVER_FALLBACK.get(i.src); }, true);
+// … und ebenso, wenn es nach 4 Sekunden noch nicht da ist (sonst bleibt die Karte leer)
+{
+  const seen = new WeakMap();
+  setInterval(() => {
+    for (const i of document.images) {
+      const fb = COVER_FALLBACK.get(i.src);
+      if (!fb || (i.complete && i.naturalWidth)) continue;
+      if (!seen.has(i)) seen.set(i, Date.now());
+      else if (Date.now() - seen.get(i) > 4000) { seen.delete(i); i.src = fb; }
+    }
+  }, 1000);
+}
 
 /* ---------- Songs ---------- */
 let SONGS = [];
@@ -67,6 +91,9 @@ async function loadSongs() {
   const r = await fetch('data/songs.json?v=' + APP_VERSION);
   if (!r.ok) throw new Error('HTTP ' + r.status);
   SONGS = (await r.json()).songs;
+  // Original-Cover statt Sampler-Cover (data/covers.json, Spiele-Hub/scripts/check-covers.js)
+  const fix = await fetch('data/covers.json?v=' + APP_VERSION).then(x => x.ok ? x.json() : {}).then(j => j.covers || {}).catch(() => ({}));
+  for (const s of SONGS) if (fix[s.id]) { s.c0 = s.c; s.c = fix[s.id]; }
   return SONGS;
 }
 const poolOf = p => SONGS.filter(s => p === 'all' || (p === 'de' ? s.de : !s.de));

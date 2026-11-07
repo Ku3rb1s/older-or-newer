@@ -5,6 +5,7 @@
   name: "Norsk",
   flag: "🇳🇴",
   dict: {
+    "Diese Hörprobe lädt gerade nicht – tippe gleich nochmal auf das Cover.": "Lydprøven lastes ikke akkurat nå – trykk på coveret igjen om litt.",
     "Schaffst du mehr?": "Klarer du mer?",
     "Bild gespeichert, Text kopiert": "Bilde lagret, tekst kopiert",
     "Zeitreise {a} – {b}": "Tidsreise {a} – {b}",

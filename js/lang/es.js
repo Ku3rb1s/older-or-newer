@@ -5,6 +5,7 @@
   name: "Español",
   flag: "🇪🇸",
   dict: {
+    "Diese Hörprobe lädt gerade nicht – tippe gleich nochmal auf das Cover.": "Este fragmento no carga ahora mismo: vuelve a tocar la portada en un momento.",
     "Schaffst du mehr?": "¿Puedes superarlo?",
     "Bild gespeichert, Text kopiert": "Imagen guardada, texto copiado",
     "Zeitreise {a} – {b}": "Viaje en el tiempo {a} – {b}",

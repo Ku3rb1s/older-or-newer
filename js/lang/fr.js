@@ -5,6 +5,7 @@
   name: "Français",
   flag: "🇫🇷",
   dict: {
+    "Diese Hörprobe lädt gerade nicht – tippe gleich nochmal auf das Cover.": "Cet extrait ne se charge pas – touche à nouveau la pochette dans un instant.",
     "Schaffst du mehr?": "Tu fais mieux ?",
     "Bild gespeichert, Text kopiert": "Image enregistrée, texte copié",
     "Zeitreise {a} – {b}": "Voyage dans le temps {a} – {b}",

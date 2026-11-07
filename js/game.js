@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.5.4', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.5.5', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -83,30 +83,40 @@ if (/iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'Mac
 const player = new Audio();
 player.preload = 'auto';
 let playingId = null;
-const previews = new Map();   // id → Promise<url>
-function previewOf(s) {
-  if (!previews.has(s.id)) {
-    const p = DZ.track(s.id).then(t => {
+// Deezer-Links laufen nach ca. 15 Minuten ab (Parameter exp=… im Link). Gemerkt wird darum auch, bis wann der Link gilt;
+// ein abgelaufener (oder bald ablaufender) Link wird neu geholt – sonst spielte ein Song später nicht mehr
+// (iPhone: „The operation is not supported“). Gleiche Lösung wie in Gold Record.
+const previews = new Map();   // id → { p: Promise<url>, until: ms }
+const linkUntil = url => { const m = String(url).match(/exp=(\d{9,})/); return m ? +m[1] * 1000 : Date.now() + 10 * 60e3; };
+function previewOf(s, fresh = false) {
+  const hit = previews.get(s.id);
+  if (fresh || !hit || hit.until < Date.now() + 60e3) {
+    const e = { until: Infinity };
+    e.p = DZ.track(s.id).then(t => {
       if (!t.preview) throw new Error(tx('Keine Vorschau'));
       if (!s.c && t.album?.md5_image) s.c = t.album.md5_image;
+      e.until = linkUntil(t.preview);
       return t.preview;
     });
-    p.catch(() => previews.delete(s.id));   // beim nächsten Mal erneut versuchen
-    previews.set(s.id, p);
+    e.p.catch(() => { if (previews.get(s.id) === e) previews.delete(s.id); });   // beim nächsten Mal erneut versuchen
+    previews.set(s.id, e);
   }
-  return previews.get(s.id);
+  return previews.get(s.id).p;
 }
-async function play(s) {
+async function play(s, retry = true) {
   playingId = s.id; renderPlaying();
   try {
-    const url = await previewOf(s);
+    const url = await previewOf(s, !retry);
     if (playingId !== s.id) return;
     if (player.src !== url) player.src = url;
     applyVol();
     await player.play();
   } catch (e) {
-    if (playingId === s.id) { playingId = null; renderPlaying(); }
-    if (e?.name !== 'AbortError') toast(e?.name === 'NotAllowedError' ? tx('Tippe auf das Cover, um abzuspielen') : (e?.message || tx('Abspielen klappt gerade nicht')));
+    if (e?.name === 'AbortError' || playingId !== s.id) return;
+    // Link abgelaufen oder Datei kaputt: einmal mit frischem Link versuchen
+    if (retry && e?.name !== 'NotAllowedError') return play(s, false);
+    playingId = null; renderPlaying();
+    toast(e?.name === 'NotAllowedError' ? tx('Tippe auf das Cover, um abzuspielen') : tx('Diese Hörprobe lädt gerade nicht – tippe gleich nochmal auf das Cover.'));
   }
 }
 function stop() { playingId = null; player.pause(); renderPlaying(); }

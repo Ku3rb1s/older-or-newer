@@ -5,6 +5,7 @@
   name: "English",
   flag: "🇬🇧",
   dict: {
+    "Diese Hörprobe lädt gerade nicht – tippe gleich nochmal auf das Cover.": "This preview won’t load right now – tap the cover again in a moment.",
     "Schaffst du mehr?": "Can you beat it?",
     "Bild gespeichert, Text kopiert": "Image saved, text copied",
     "Zeitreise {a} – {b}": "Time travel {a} – {b}",

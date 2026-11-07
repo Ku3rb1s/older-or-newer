@@ -1,0 +1,50 @@
+# Older or Newer
+
+Musik-Quiz wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer – **älter oder neuer?**
+Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. Teil der
+[Jukebox](https://ku3rb1s.github.io/jukebox/) (gleicher Look wie Musik-Bingo und Needle Drop).
+
+**Online:** https://ku3rb1s.github.io/older-or-newer/
+
+Lokal starten: `node server.js` → http://127.0.0.1:8892/
+
+## Wie es funktioniert
+
+- **Songs:** kuratierte Liste in `data/songs-src.txt` (rund 400 Hits 1956–2025, international und deutsch).
+  Das Jahr ist die **erste Veröffentlichung** – Deezer und Spotify nennen oft das Jahr von Best-of-Alben oder Remastern, darum kommt es nicht von dort.
+- **Jahre geprüft mit MusicBrainz:** `scripts/check-years.js` schlägt jedes Jahr nach (gleiche Logik wie „Originaljahr nachschlagen“
+  in Musik-Bingo: früheste Album/Single/EP-Veröffentlichung, ohne Compilations, Bootlegs und Live-Mitschnitte) und listet Abweichungen.
+  Das passiert beim Bauen, nicht im Spiel – MusicBrainz erlaubt nur etwa eine Anfrage pro Sekunde.
+- **Audio:** 30-s-Vorschauen von Deezer (JSONP, kein Login). Der Vorschau-Link läuft ab, darum wird er erst kurz vorher per `/track/{id}` geholt.
+- **Schwierigkeit:** Mindestabstand der Jahre – Leicht ≥ 8, Normal ≥ 3, Schwer ab 1 Jahr. Gleiche Jahre kommen nie vor.
+- **Modus:** „Mit Titel“ oder „Nur hören“ (Titel, Interpret und Cover erst nach dem Tipp).
+- Rekorde je Songs/Schwierigkeit/Modus und Statistik nur lokal (`oon.*` im Browser-Speicher). Design (`mq.theme`), Sprache (`mq.lang`) und Profil (`jb.profile`) teilt es mit den anderen Spielen.
+
+## Songliste ändern
+
+1. `data/songs-src.txt` bearbeiten: `Jahr | Interpret | Titel | Zusätze` (`de` = deutscher Act, `dz=123` = feste Deezer-ID, falls die Suche danebenliegt)
+2. `node scripts/build-songs.js` – sucht die Deezer-IDs und schreibt `data/songs.json`
+3. `node scripts/check-years.js` – prüft die Jahre gegen MusicBrainz (dauert ca. 10 Minuten) und zeigt Abweichungen zum Nachprüfen
+
+## Sprachen
+
+Deutsch, Englisch, Französisch, Spanisch, Norwegisch – gleiches System wie Needle Drop (`js/i18n.js`, `js/lang/*.js`).
+Texte im Code auf Deutsch mit `tx()`; `node scripts/check-lang.js` zeigt, was fehlt.
+
+## Versionen
+
+Änderungen in [CHANGELOG.md](CHANGELOG.md) und in der App unter Einstellungen → Versionsnummer. Bei jedem Update `APP_VERSION`/`APP_DATE`
+in `js/game.js` erhöhen, `CHANGELOG.md` ergänzen und `?v=` in `index.html` hochzählen.
+
+## Aufbau
+
+| Datei | Inhalt |
+|---|---|
+| `index.html` | Markup (Start, Spiel, Ende, Einstellungen) und Icons |
+| `css/base.css`, `css/fonts.css`, `fonts/` | gemeinsamer Look aus Musik-Bingo, Schrift Outfit lokal |
+| `css/app.css` | Spiel-eigene Teile (Song-Karten, Älter/Neuer-Knöpfe, Ergebnis) |
+| `js/game.js` | Spielablauf, Wiedergabe, Anzeige, Einstellungen |
+| `js/deezer.js`, `js/i18n.js`, `js/profile.js`, `js/pwa.js` | wie in Needle Drop |
+| `data/songs-src.txt` → `data/songs.json` | Songliste mit geprüften Jahren |
+| `scripts/` | Songliste bauen, Jahre prüfen, Sprachen prüfen |
+| `logo.svg` | Logo (Vorlage für die PNG-Icons) |

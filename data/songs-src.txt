@@ -1,0 +1,423 @@
+# Older or Newer – Songliste (Quelle für data/songs.json)
+# Format: Jahr | Interpret | Titel | Zusätze (optional, mit Leerzeichen getrennt): de = deutscher Act, dz=123 = feste Deezer-ID (wenn die Suche danebenliegt)
+# Jahr = erste Veröffentlichung (Single oder Album, was zuerst kam). Songs mit unklarem Jahr
+# (Album und Single in verschiedenen Jahren, späte Hits alter Aufnahmen) lieber weglassen.
+# Nach Änderungen: node scripts/build-songs.js  (sucht die Deezer-IDs)
+
+# ---------- 50er & 60er ----------
+1956 | Elvis Presley | Hound Dog
+1957 | Elvis Presley | Jailhouse Rock
+1958 | Chuck Berry | Johnny B. Goode
+1958 | Ritchie Valens | La Bamba
+1959 | Bobby Darin | Mack the Knife
+1961 | Ben E. King | Stand by Me
+1963 | The Beatles | She Loves You
+1963 | The Ronettes | Be My Baby
+1964 | The Beatles | A Hard Day's Night
+1964 | The Animals | The House of the Rising Sun
+1964 | Roy Orbison | Oh, Pretty Woman
+1964 | The Kinks | You Really Got Me
+1965 | The Rolling Stones | (I Can't Get No) Satisfaction
+1965 | The Beatles | Yesterday
+1965 | Bob Dylan | Like a Rolling Stone
+1965 | The Righteous Brothers | Unchained Melody
+1965 | Drafi Deutscher | Marmor, Stein und Eisen bricht | de
+1966 | The Beach Boys | Good Vibrations
+1966 | Nancy Sinatra | These Boots Are Made for Walkin'
+1967 | Procol Harum | A Whiter Shade of Pale
+1967 | Aretha Franklin | Respect
+1967 | The Doors | Light My Fire
+1967 | Van Morrison | Brown Eyed Girl
+1967 | Louis Armstrong | What a Wonderful World
+1967 | The Monkees | Daydream Believer
+1968 | Otis Redding | (Sittin' On) The Dock of the Bay
+1968 | The Beatles | Hey Jude
+1968 | Simon & Garfunkel | Mrs. Robinson
+1968 | The Jimi Hendrix Experience | All Along the Watchtower
+1969 | The Beatles | Here Comes the Sun
+1969 | David Bowie | Space Oddity
+1969 | Creedence Clearwater Revival | Bad Moon Rising
+1969 | Elvis Presley | Suspicious Minds
+1969 | The Archies | Sugar, Sugar
+
+# ---------- 70er ----------
+1970 | Simon & Garfunkel | Bridge over Troubled Water
+1970 | The Beatles | Let It Be
+1970 | Black Sabbath | Paranoid
+1971 | John Lennon | Imagine
+1971 | Led Zeppelin | Stairway to Heaven
+1971 | Bill Withers | Ain't No Sunshine
+1971 | Marvin Gaye | What's Going On
+1971 | Don McLean | American Pie
+1971 | The Rolling Stones | Brown Sugar
+1972 | Bill Withers | Lean on Me
+1972 | Deep Purple | Smoke on the Water
+1972 | Eagles | Take It Easy
+1972 | Stevie Wonder | Superstition
+1973 | Pink Floyd | Money
+1973 | Elton John | Goodbye Yellow Brick Road
+1973 | The Rolling Stones | Angie
+1974 | ABBA | Waterloo
+1974 | Lynyrd Skynyrd | Sweet Home Alabama
+1974 | Carl Douglas | Kung Fu Fighting
+1974 | Kraftwerk | Autobahn | de
+1975 | Queen | Bohemian Rhapsody
+1975 | Bruce Springsteen | Born to Run
+1975 | ABBA | Mamma Mia
+1975 | 10cc | I'm Not in Love
+1976 | ABBA | Dancing Queen
+1976 | Boney M. | Daddy Cool
+1976 | Udo Jürgens | Aber bitte mit Sahne | de
+1977 | Fleetwood Mac | Dreams
+1977 | Bee Gees | Stayin' Alive
+1977 | Queen | We Will Rock You
+1977 | David Bowie | Heroes
+1977 | Donna Summer | I Feel Love
+1977 | Boney M. | Ma Baker
+1977 | Udo Jürgens | Mit 66 Jahren | de
+1978 | Boney M. | Rivers of Babylon
+1978 | Gloria Gaynor | I Will Survive
+1978 | Queen | Don't Stop Me Now
+1978 | Village People | Y.M.C.A. | dz=3809086042
+1978 | Toto | Hold the Line
+1978 | Dire Straits | Sultans of Swing
+1978 | Earth, Wind & Fire | September
+1978 | Kate Bush | Wuthering Heights
+1978 | Kraftwerk | Das Model | de
+1979 | Michael Jackson | Don't Stop 'Til You Get Enough
+1979 | Pink Floyd | Another Brick in the Wall, Pt. 2
+1979 | The Buggles | Video Killed the Radio Star
+1979 | Sister Sledge | We Are Family
+1979 | The Clash | London Calling
+1979 | AC/DC | Highway to Hell
+1979 | The Police | Message in a Bottle
+1979 | Dschinghis Khan | Dschinghis Khan | de
+
+# ---------- 80er ----------
+1980 | AC/DC | Back in Black
+1980 | Queen | Another One Bites the Dust
+1980 | ABBA | The Winner Takes It All
+1980 | Joy Division | Love Will Tear Us Apart
+1980 | Kool & the Gang | Celebration
+1981 | Journey | Don't Stop Believin'
+1981 | Kim Wilde | Kids in America
+1981 | Soft Cell | Tainted Love
+1981 | Queen | Under Pressure
+1981 | Phil Collins | In the Air Tonight
+1981 | Falco | Der Kommissar | de
+1982 | Survivor | Eye of the Tiger
+1982 | Toto | Africa
+1982 | Dexys Midnight Runners | Come On Eileen
+1982 | Nicole | Ein bißchen Frieden | de
+1982 | Trio | Da Da Da | de
+1982 | Markus | Ich will Spaß | de
+1983 | Eurythmics | Sweet Dreams (Are Made of This)
+1983 | The Police | Every Breath You Take
+1983 | Bonnie Tyler | Total Eclipse of the Heart
+1983 | Cyndi Lauper | Girls Just Want to Have Fun
+1983 | Irene Cara | Flashdance... What a Feeling
+1983 | David Bowie | Let's Dance
+1983 | Culture Club | Karma Chameleon
+1983 | Michael Sembello | Maniac
+1983 | Nena | 99 Luftballons | de
+1983 | Peter Schilling | Major Tom (Völlig losgelöst) | de
+1983 | Geier Sturzflug | Bruttosozialprodukt | de
+1983 | Wolfgang Petry | Wahnsinn | de
+1984 | Wham! | Last Christmas
+1984 | Wham! | Wake Me Up Before You Go-Go
+1984 | Prince | When Doves Cry
+1984 | Bruce Springsteen | Born in the U.S.A.
+1984 | Tina Turner | What's Love Got to Do with It
+1984 | Kenny Loggins | Footloose
+1984 | Alphaville | Forever Young
+1984 | Madonna | Like a Virgin
+1984 | Ray Parker Jr. | Ghostbusters
+1984 | Scorpions | Still Loving You
+1984 | Herbert Grönemeyer | Männer | de
+1984 | Nena | Irgendwie, irgendwo, irgendwann | de
+1984 | Modern Talking | You're My Heart, You're My Soul | de
+1985 | Tears for Fears | Everybody Wants to Rule the World
+1985 | Dire Straits | Money for Nothing
+1985 | Simple Minds | Don't You (Forget About Me)
+1985 | USA for Africa | We Are the World | dz=11118881
+1985 | Falco | Rock Me Amadeus | de
+1985 | Modern Talking | Cheri, Cheri Lady | de
+1985 | Münchener Freiheit | Ohne dich (schlaf' ich heut' Nacht nicht ein) | de
+1986 | Europe | The Final Countdown
+1986 | Bon Jovi | Livin' on a Prayer
+1986 | Berlin | Take My Breath Away
+1986 | Peter Gabriel | Sledgehammer
+1986 | Run-DMC | Walk This Way
+1987 | Rick Astley | Never Gonna Give You Up
+1987 | Guns N' Roses | Welcome to the Jungle
+1987 | U2 | With or Without You
+1987 | Whitney Houston | I Wanna Dance with Somebody (Who Loves Me)
+1987 | Bill Medley | (I've Had) The Time of My Life
+1987 | Belinda Carlisle | Heaven Is a Place on Earth
+1987 | George Michael | Faith
+1988 | Tracy Chapman | Fast Car
+1988 | Bobby McFerrin | Don't Worry Be Happy
+1989 | Madonna | Like a Prayer
+1989 | Billy Joel | We Didn't Start the Fire
+1989 | Kaoma | Lambada
+1989 | Technotronic | Pump Up the Jam
+1989 | The B-52's | Love Shack
+
+# ---------- 90er ----------
+1990 | MC Hammer | U Can't Touch This
+1990 | Sinéad O'Connor | Nothing Compares 2 U
+1990 | Vanilla Ice | Ice Ice Baby
+1990 | Snap! | The Power
+1990 | Deee-Lite | Groove Is in the Heart
+1990 | Depeche Mode | Enjoy the Silence
+1990 | Matthias Reim | Verdammt, ich lieb' dich | de
+1991 | Nirvana | Smells Like Teen Spirit
+1991 | R.E.M. | Losing My Religion
+1991 | Bryan Adams | (Everything I Do) I Do It for You
+1991 | Queen | The Show Must Go On
+1991 | Michael Jackson | Black or White
+1991 | Metallica | Enter Sandman
+1991 | Roxette | Joyride
+1992 | Whitney Houston | I Will Always Love You
+1992 | Snap! | Rhythm Is a Dancer
+1992 | Dr. Alban | It's My Life
+1992 | Rage Against the Machine | Killing in the Name
+1992 | Sir Mix-A-Lot | Baby Got Back
+1992 | Die Fantastischen Vier | Die da!?! | de
+1993 | 4 Non Blondes | What's Up?
+1993 | Haddaway | What Is Love
+1993 | Culture Beat | Mr. Vain
+1993 | Meat Loaf | I'd Do Anything for Love (But I Won't Do That)
+1993 | Ace of Base | The Sign
+1993 | 2 Unlimited | No Limit
+1993 | Die Ärzte | Schrei nach Liebe | de
+1994 | The Cranberries | Zombie
+1994 | Wet Wet Wet | Love Is All Around
+1994 | Green Day | Basket Case
+1994 | Mariah Carey | All I Want for Christmas Is You
+1994 | Scooter | Hyper Hyper | de
+1995 | Oasis | Wonderwall
+1995 | Coolio | Gangsta's Paradise
+1995 | Alanis Morissette | You Oughta Know
+1995 | TLC | Waterfalls
+1995 | Fool's Garden | Lemon Tree | de dz=3750996632
+1996 | Spice Girls | Wannabe
+1996 | Fugees | Killing Me Softly with His Song
+1996 | Mr. President | Coco Jamboo | de
+1996 | Die Toten Hosen | Zehn kleine Jägermeister | de
+1997 | Hanson | MMMBop
+1997 | Aqua | Barbie Girl
+1997 | Backstreet Boys | Everybody (Backstreet's Back)
+1997 | The Verve | Bitter Sweet Symphony
+1997 | Celine Dion | My Heart Will Go On
+1997 | Chumbawamba | Tubthumping
+1997 | Radiohead | Karma Police
+1997 | Puff Daddy | I'll Be Missing You | dz=3829297
+1997 | Rammstein | Du hast | de
+1997 | Rammstein | Engel | de
+1997 | Sash! | Ecuador | de
+1998 | Britney Spears | ...Baby One More Time
+1998 | Cher | Believe
+1998 | Aerosmith | I Don't Want to Miss a Thing
+1998 | Robbie Williams | Millennium
+1998 | Scooter | How Much Is the Fish? | de
+1999 | Lou Bega | Mambo No. 5 (A Little Bit of...)
+1999 | Backstreet Boys | I Want It That Way
+1999 | Ricky Martin | Livin' la Vida Loca
+1999 | Santana | Smooth
+1999 | Red Hot Chili Peppers | Scar Tissue
+1999 | Christina Aguilera | Genie in a Bottle
+1999 | Eminem | My Name Is
+1999 | Blink-182 | All the Small Things
+
+# ---------- 2000er ----------
+2000 | Eminem | The Real Slim Shady
+2000 | Modjo | Lady (Hear Me Tonight)
+2000 | Coldplay | Yellow
+2000 | Britney Spears | Oops!... I Did It Again
+2000 | Bon Jovi | It's My Life
+2001 | Daft Punk | Harder, Better, Faster, Stronger
+2001 | Kylie Minogue | Can't Get You Out of My Head
+2001 | Gorillaz | Clint Eastwood
+2001 | Alicia Keys | Fallin'
+2001 | Destiny's Child | Survivor
+2001 | Rammstein | Sonne | de
+2001 | Seeed | Dickes B | de
+2002 | Eminem | Lose Yourself
+2002 | Avril Lavigne | Complicated
+2002 | Nelly | Hot in Herre
+2002 | Las Ketchup | The Ketchup Song (Aserejé)
+2002 | Coldplay | The Scientist
+2003 | Beyoncé | Crazy in Love
+2003 | OutKast | Hey Ya!
+2003 | 50 Cent | In da Club
+2003 | The White Stripes | Seven Nation Army
+2003 | The Black Eyed Peas | Where Is the Love?
+2003 | Linkin Park | Numb
+2003 | Evanescence | Bring Me to Life
+2003 | Wir sind Helden | Guten Tag | de
+2004 | Green Day | Boulevard of Broken Dreams
+2004 | Usher | Yeah!
+2004 | Maroon 5 | This Love
+2004 | Franz Ferdinand | Take Me Out
+2004 | Rammstein | Amerika | de
+2004 | Juli | Perfekte Welle | de
+2004 | Silbermond | Durch die Nacht | de dz=41173971
+2005 | James Blunt | You're Beautiful
+2005 | Gorillaz | Feel Good Inc.
+2005 | Kanye West | Gold Digger
+2005 | Daniel Powter | Bad Day
+2005 | Mariah Carey | We Belong Together
+2005 | Tokio Hotel | Durch den Monsun | de
+2006 | Gnarls Barkley | Crazy
+2006 | Shakira | Hips Don't Lie
+2006 | Nelly Furtado | Maneater
+2006 | Justin Timberlake | SexyBack
+2006 | Snow Patrol | Chasing Cars
+2006 | Amy Winehouse | Rehab
+2006 | Sportfreunde Stiller | '54, '74, '90, 2006 | de
+2007 | Rihanna | Umbrella
+2007 | Timbaland | Apologize
+2007 | Leona Lewis | Bleeding Love
+2007 | Ich + Ich | Vom selben Stern | de
+2008 | Katy Perry | I Kissed a Girl
+2008 | Kings of Leon | Use Somebody
+2008 | Duffy | Mercy
+2008 | Lady Gaga | Just Dance
+2008 | Lady Gaga | Poker Face
+2008 | Beyoncé | Single Ladies (Put a Ring on It)
+2008 | Peter Fox | Haus am See | de
+2008 | Peter Fox | Schwarz zu blau | de
+2009 | The Black Eyed Peas | I Gotta Feeling
+2009 | David Guetta | When Love Takes Over
+2009 | Kesha | TiK ToK
+2009 | Lady Gaga | Bad Romance
+2009 | Jay-Z | Empire State of Mind
+2009 | Taylor Swift | You Belong with Me
+2009 | Owl City | Fireflies
+
+# ---------- 2010er ----------
+2010 | Bruno Mars | Just the Way You Are
+2010 | Katy Perry | California Gurls
+2010 | Shakira | Waka Waka (This Time for Africa)
+2010 | Eminem | Love the Way You Lie
+2010 | Rihanna | Only Girl (In the World)
+2010 | Yolanda Be Cool | We No Speak Americano
+2010 | Unheilig | Geboren um zu leben | de
+2010 | Lena | Satellite | de
+2011 | Adele | Someone Like You
+2011 | LMFAO | Party Rock Anthem
+2011 | Maroon 5 | Moves like Jagger
+2011 | Rihanna | We Found Love
+2011 | Gotye | Somebody That I Used to Know
+2011 | Avicii | Levels
+2011 | Lana Del Rey | Video Games
+2011 | Tim Bendzko | Nur noch kurz die Welt retten | de
+2012 | PSY | Gangnam Style
+2012 | Macklemore & Ryan Lewis | Thrift Shop
+2012 | Imagine Dragons | Radioactive
+2012 | Swedish House Mafia | Don't You Worry Child
+2012 | Taylor Swift | We Are Never Ever Getting Back Together
+2012 | Adele | Skyfall
+2012 | Cro | Easy | de
+2013 | Daft Punk | Get Lucky
+2013 | Avicii | Wake Me Up
+2013 | Robin Thicke | Blurred Lines
+2013 | Pharrell Williams | Happy
+2013 | Lorde | Royals
+2013 | Katy Perry | Roar
+2013 | Miley Cyrus | Wrecking Ball
+2013 | Helene Fischer | Atemlos durch die Nacht | de
+2014 | Mark Ronson | Uptown Funk
+2014 | Taylor Swift | Shake It Off
+2014 | Meghan Trainor | All About That Bass
+2014 | Sam Smith | Stay with Me
+2014 | Ed Sheeran | Thinking Out Loud
+2014 | Clean Bandit | Rather Be
+2014 | Andreas Bourani | Auf uns | de
+2014 | Mark Forster | Au revoir | de
+2015 | Adele | Hello
+2015 | Wiz Khalifa | See You Again
+2015 | The Weeknd | Can't Feel My Face
+2015 | Justin Bieber | Sorry
+2015 | Major Lazer | Lean On
+2015 | Robin Schulz | Sugar | de
+2015 | Joris | Herz über Kopf | de
+2016 | Drake | One Dance
+2016 | Justin Timberlake | Can't Stop the Feeling!
+2016 | The Chainsmokers | Closer
+2016 | Sia | Cheap Thrills
+2016 | The Weeknd | Starboy
+2016 | Calvin Harris | This Is What You Came For
+2016 | Max Giesinger | 80 Millionen | de
+2016 | AnnenMayKantereit | Pocahontas | de
+2017 | Ed Sheeran | Shape of You
+2017 | Luis Fonsi | Despacito
+2017 | Imagine Dragons | Believer
+2017 | Camila Cabello | Havana
+2017 | Post Malone | rockstar
+2017 | Bausa | Was du Liebe nennst | de
+2018 | Drake | God's Plan
+2018 | Lady Gaga | Shallow
+2018 | Ariana Grande | thank u, next
+2018 | Marshmello | Happier
+2018 | Travis Scott | SICKO MODE
+2018 | Post Malone | Sunflower
+2019 | Billie Eilish | bad guy
+2019 | Tones and I | Dance Monkey
+2019 | The Weeknd | Blinding Lights
+2019 | Shawn Mendes | Señorita
+2019 | Arizona Zervas | ROXANNE
+2019 | Apache 207 | Roller | de
+
+# ---------- 2020er ----------
+2020 | Dua Lipa | Levitating
+2020 | The Weeknd | Save Your Tears
+2020 | BTS | Dynamite
+2020 | Cardi B | WAP
+2020 | Jawsh 685 & Jason Derulo | Savage Love | dz=986939372
+2020 | 24kGoldn | Mood
+2020 | Joel Corry | Head & Heart
+2021 | Olivia Rodrigo | drivers license
+2021 | Måneskin | ZITTI E BUONI
+2021 | Lil Nas X | MONTERO (Call Me By Your Name)
+2021 | The Kid LAROI | STAY
+2021 | Ed Sheeran | Bad Habits
+2021 | Adele | Easy on Me
+2021 | Elton John & Dua Lipa | Cold Heart | dz=1457025872
+2022 | Harry Styles | As It Was
+2022 | Lizzo | About Damn Time
+2022 | Bad Bunny | Tití Me Preguntó
+2022 | Taylor Swift | Anti-Hero
+2022 | Sam Smith | Unholy
+2022 | David Guetta | I'm Good (Blue)
+2022 | Rema | Calm Down
+2022 | Nina Chuba | Wildberry Lillet | de
+2022 | Peter Fox | Zukunft Pink | de
+2023 | Miley Cyrus | Flowers
+2023 | Billie Eilish | What Was I Made For?
+2023 | Doja Cat | Paint The Town Red
+2023 | Tate McRae | greedy
+2023 | Olivia Rodrigo | vampire
+2023 | Loreen | Tattoo
+2023 | Jung Kook | Seven | dz=2364618815
+2023 | Dua Lipa | Houdini
+2023 | Udo Lindenberg | Komet | de
+2023 | Ski Aggu | Friesenjung | de
+2024 | Benson Boone | Beautiful Things
+2024 | Sabrina Carpenter | Espresso
+2024 | Billie Eilish | BIRDS OF A FEATHER
+2024 | Chappell Roan | Good Luck, Babe!
+2024 | Shaboozey | A Bar Song (Tipsy)
+2024 | Hozier | Too Sweet
+2024 | Lady Gaga | Die With A Smile
+2024 | ROSÉ | APT.
+2024 | Kendrick Lamar | Not Like Us
+2024 | Tommy Richman | MILLION DOLLAR BABY
+2025 | Alex Warren | Ordinary
+2025 | Lady Gaga | Abracadabra
+2025 | Sabrina Carpenter | Manchild
+2025 | HUNTR/X | Golden
+2025 | Ed Sheeran | Azizam
+2025 | Bad Bunny | DtMF
+2025 | Tate McRae | Sports car

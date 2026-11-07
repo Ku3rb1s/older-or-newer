@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.2 – 07.11.2026
+- Bestenliste: Machst du mit, landen Rekorde und Serien jetzt direkt nach dem Spielen in der Bestenliste – ohne erst die Jukebox zu öffnen
+
 ## 1.6.1 – 07.11.2026
 - Mehr Avatare: rund 95 Emojis zur Auswahl, davon über 50 Tiere. Ein Tipp auf den Avatar öffnet jetzt ein Auswahl-Fenster (Tiere, Musik, Sonstiges) – gilt in allen Jukebox-Spielen
 

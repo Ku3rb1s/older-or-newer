@@ -43,7 +43,9 @@ async function playlist(id) {
   }
   return out;
 }
-const key = (t, a) => normStr(baseTitle(t)) + '|' + normStr(String(a).split(/ & | x | feat\.? | with |, /i)[0]);
+// Alle Klammern und „ - Zusatz“ weglassen: „Waka Waka (Esto Es Africa)“ = „Waka Waka (This Time for Africa)“,
+// „This Girl (Kungs Vs Cookin' On 3 Burners)“ = „This Girl“ – sonst landet derselbe Song zweimal im Spiel
+const key = (t, a) => normStr(baseTitle(t).replace(/\s*[([].*?[)\]]/g, '').replace(/\s+-\s+.*$/, '')) + '|' + normStr(String(a).split(/ & | x | feat\.? | with |, /i)[0]);
 const cleanTitle = t => baseTitle(t.title_short || t.title).replace(/\s+[-–—]\s+.*\b(remaster(ed)?|version|edit)\b.*$/i, '').trim();
 
 (async () => {

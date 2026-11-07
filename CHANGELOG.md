@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.9 – 07.11.2026
+- Zwei Songs kamen doppelt vor („Waka Waka“ auf Spanisch und Englisch, „This Girl“ in zwei Fassungen) – entfernt; die automatische Songliste erkennt solche Dopplungen jetzt
+
 ## 1.6.8 – 07.11.2026
 - Einstellungen: Dein Code steht nicht mehr offen da („✓ Abgeglichen · verwalten in der Jukebox“) – den Code selbst gibt es nur im Fenster „Dein Code“ der Jukebox
 

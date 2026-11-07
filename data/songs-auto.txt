@@ -253,7 +253,6 @@
 2010 | Miguel | Sure Thing | auto dz=7675649
 2010 | Philipp Poisel | Wie soll ein Mensch das ertragen | auto dz=1754267497 de
 2010 | Revolverheld | Spinner | auto dz=5336724 de
-2010 | Shakira | Waka Waka (Esto Es Africa) | auto dz=79589198
 2010 | The Black Eyed Peas | Just Can’t Get Enough | auto dz=7706014
 2010 | Travie McCoy | Billionaire | auto dz=6590103
 2010 | Two Door Cinema Club | What You Know | auto dz=7546493
@@ -491,7 +490,6 @@
 2016 | Kanye West | Father Stretch My Hands Pt. 1 | auto dz=126772731
 2016 | Kings of Leon | Waste A Moment | auto dz=134024948
 2016 | KLUBBB3 | Du schaffst das schon | auto dz=116945236 de
-2016 | Kungs | This Girl (Kungs Vs Cookin' On 3 Burners) | auto dz=121593956
 2016 | Kygo | Raging | auto dz=124600536
 2016 | Kyle | iSpy | auto dz=141921707
 2016 | Lady Gaga | Million Reasons | auto dz=134525904

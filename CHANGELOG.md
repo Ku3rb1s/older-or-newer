@@ -1,5 +1,10 @@
 # Neuerungen
 
+## 1.5.0 – 07.11.2026
+- **Über 2.100 Songs** statt rund 900: Hits aus den Deezer-Redaktions-Playlists (Jahrzehnte, Pop, Rap, R&B, Rock, EDM, Latin, aktuelle Charts, Deutschrap, Deutsch-Pop, Schlager, NDW) und dem Billionärs Club
+- Jahre doppelt geprüft: Ein neuer Song kommt nur rein, wenn **MusicBrainz und Deezer dasselbe Erscheinungsjahr** nennen
+- 23 Jahre in der handverlesenen Liste korrigiert (Songs, die zuerst auf einem Album erschienen und erst später Single-Hit wurden – z. B. „You Belong with Me“ 2008, „Royals“ 2012)
+
 ## 1.4.1 – 07.11.2026
 - **Ergebnis als Bild teilen:** „Teilen“ schickt jetzt ein Bild mit deiner Serie, der Kästchenreihe und deiner Zeitreise mit (am PC wird das Bild gespeichert und der Text kopiert)
 - In den Einstellungen siehst du jetzt, ob „Auf allen Geräten spielen“ verbunden ist – der Code wird in der Jukebox angelegt

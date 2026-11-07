@@ -1,0 +1,137 @@
+MusicBrainz-Abgleich 2026-11-07
+
+101 Abweichungen (größte zuerst):
+1957 → MB 2004  (+47)  Jerry Lee Lewis – Great Balls of Fire
+1955 → MB 1997  (+42)  Chuck Berry – Maybellene
+1960 → MB 2000  (+40)  Elvis Presley – It's Now or Never
+1954 → MB 1993  (+39)  Bill Haley & His Comets – Rock Around the Clock
+1979 → MB 2017  (+38)  Pink Floyd – Another Brick in the Wall, Pt. 2
+1956 → MB 1993  (+37)  Elvis Presley – Hound Dog
+1956 → MB 1992  (+36)  Elvis Presley – Heartbreak Hotel
+1959 → MB 1993  (+34)  Bobby Darin – Mack the Knife
+1961 → MB 1995  (+34)  Del Shannon – Runaway
+1962 → MB 1993  (+31)  Elvis Presley – Return to Sender
+1994 → MB 2025  (+31)  The Offspring – Self Esteem
+1982 → MB 2012  (+30)  Trio – Da Da Da
+1964 → MB 1992  (+28)  Roy Orbison – Oh, Pretty Woman
+1958 → MB 1986  (+28)  Eddie Cochran – Summertime Blues
+1976 → MB 2003  (+27)  Boston – More Than a Feeling
+1982 → MB 2009  (+27)  Marvin Gaye – Sexual Healing
+1968 → MB 1992  (+24)  Otis Redding – (Sittin' On) The Dock of the Bay
+1969 → MB 1993  (+24)  Elvis Presley – Suspicious Minds
+1965 → MB 1989  (+24)  The Byrds – Mr. Tambourine Man
+1966 → MB 1989  (+23)  The Troggs – Wild Thing
+1979 → MB 2002  (+23)  M – Pop Muzik
+1969 → MB 1991  (+22)  The Archies – Sugar, Sugar
+1975 → MB 1997  (+22)  KC and the Sunshine Band – That's the Way (I Like It)
+1967 → MB 1988  (+21)  Louis Armstrong – What a Wonderful World
+1973 → MB 1994  (+21)  Gladys Knight & The Pips – Midnight Train to Georgia
+1978 → MB 1998  (+20)  John Travolta – You're the One That I Want
+1978 → MB 1997  (+19)  Gloria Gaynor – I Will Survive
+1980 → MB 1998  (+18)  Kool & the Gang – Celebration
+2010 → MB 2026  (+16)  Kesha – We R Who We R
+1975 → MB 1990  (+15)  Van McCoy – The Hustle
+1958 → MB 1972  (+14)  Chuck Berry – Johnny B. Goode
+1977 → MB 1990  (+13)  Bee Gees – How Deep Is Your Love
+1956 → MB 1968  (+12)  Carl Perkins – Blue Suede Shoes
+2006 → MB 1995  (-11)  Lily Allen – Smile
+1974 → MB 1983  (+9)  Lynyrd Skynyrd – Sweet Home Alabama
+1986 → MB 1993  (+7)  Peter Gabriel – Sledgehammer
+1992 → MB 1999  (+7)  Whitney Houston – I Will Always Love You
+1965 → MB 1972  (+7)  The Who – My Generation
+1977 → MB 1983  (+6)  Bee Gees – Stayin' Alive
+1985 → MB 1990  (+5)  Simple Minds – Don't You (Forget About Me)
+1990 → MB 1995  (+5)  Londonbeat – I've Been Thinking About You
+1984 → MB 1988  (+4)  Ray Parker Jr. – Ghostbusters
+1966 → MB 1969  (+3)  Percy Sledge – When a Man Loves a Woman
+1994 → MB 1997  (+3)  Ini Kamoze – Here Comes the Hotstepper
+2002 → MB 2004  (+2)  Eminem – Lose Yourself
+2004 → MB 2002  (-2)  Maroon 5 – This Love
+2017 → MB 2015  (-2)  Ed Sheeran – Shape of You
+1999 → MB 1997  (-2)  Smash Mouth – All Star
+1999 → MB 1997  (-2)  Sugar Ray – Every Morning
+2004 → MB 2002  (-2)  Maroon 5 – She Will Be Loved
+1958 → MB 1959  (+1)  Ritchie Valens – La Bamba
+1981 → MB 1982  (+1)  Falco – Der Kommissar
+1983 → MB 1982  (-1)  Peter Schilling – Major Tom (Völlig losgelöst)
+1984 → MB 1983  (-1)  Nena – Irgendwie, irgendwo, irgendwann
+1993 → MB 1992  (-1)  4 Non Blondes – What's Up?
+1993 → MB 1992  (-1)  2 Unlimited – No Limit
+2000 → MB 1999  (-1)  Eminem – The Real Slim Shady
+2003 → MB 2002  (-1)  Wir sind Helden – Guten Tag
+2005 → MB 2004  (-1)  James Blunt – You're Beautiful
+2006 → MB 2005  (-1)  Shakira – Hips Don't Lie
+2008 → MB 2007  (-1)  Duffy – Mercy
+2009 → MB 2008  (-1)  The Black Eyed Peas – I Gotta Feeling
+2009 → MB 2008  (-1)  Taylor Swift – You Belong with Me
+2011 → MB 2010  (-1)  Maroon 5 – Moves like Jagger
+2013 → MB 2012  (-1)  Lorde – Royals
+2014 → MB 2013  (-1)  Taylor Swift – Shake It Off
+2022 → MB 2023  (+1)  Nina Chuba – Wildberry Lillet
+2025 → MB 2024  (-1)  Alex Warren – Ordinary
+1960 → MB 1961  (+1)  Chubby Checker – The Twist
+1965 → MB 1966  (+1)  James Brown – I Got You (I Feel Good)
+1966 → MB 1965  (-1)  Roy Black – Ganz in Weiß
+1970 → MB 1971  (+1)  Mungo Jerry – In the Summertime
+1971 → MB 1970  (-1)  Janis Joplin – Me and Bobby McGee
+1981 → MB 1980  (-1)  Joachim Witt – Goldener Reiter
+1983 → MB 1982  (-1)  Kajagoogoo – Too Shy
+1984 → MB 1983  (-1)  Cyndi Lauper – Time After Time
+1985 → MB 1984  (-1)  Madonna – Into the Groove
+1986 → MB 1985  (-1)  The Bangles – Walk Like an Egyptian
+1989 → MB 1988  (-1)  Martika – Toy Soldiers
+1991 → MB 1990  (-1)  Salt-N-Pepa – Let's Talk About Sex
+1994 → MB 1995  (+1)  Whigfield – Saturday Night
+1995 → MB 1994  (-1)  Scooter – Move Your Ass!
+2002 → MB 2001  (-1)  Shakira – Underneath Your Clothes
+2003 → MB 2002  (-1)  Sean Paul – Get Busy
+2005 → MB 2004  (-1)  Gwen Stefani – Hollaback Girl
+2006 → MB 2005  (-1)  Panic! At The Disco – I Write Sins Not Tragedies
+2007 → MB 2006  (-1)  Fergie – Big Girls Don't Cry
+2008 → MB 2007  (-1)  Kid Rock – All Summer Long
+2008 → MB 2007  (-1)  Estelle – American Boy
+2008 → MB 2007  (-1)  T.I. – Whatever You Like
+2008 → MB 2007  (-1)  The Ting Tings – That's Not My Name
+2009 → MB 2008  (-1)  Lady Gaga – Paparazzi
+2009 → MB 2008  (-1)  Mumford & Sons – Little Lion Man
+2011 → MB 2010  (-1)  Bruno Mars – The Lazy Song
+2011 → MB 2010  (-1)  Ed Sheeran – The A Team
+2011 → MB 2012  (+1)  Michel Teló – Ai Se Eu Te Pego
+2011 → MB 2010  (-1)  Nicki Minaj – Super Bass
+2013 → MB 2012  (-1)  Bastille – Pompeii
+2013 → MB 2012  (-1)  Bruno Mars – Treasure
+2014 → MB 2013  (-1)  Revolverheld – Lass uns gehen
+2018 → MB 2017  (-1)  Maroon 5 – Girls Like You
+
+31 bei MusicBrainz nicht gefunden:
+1957  Elvis Presley – Jailhouse Rock
+1982  Nicole – Ein bißchen Frieden
+1982  Markus – Ich will Spaß
+1986  Run-DMC – Walk This Way
+1991  Metallica – Enter Sandman
+1996  Fugees – Killing Me Softly with His Song
+1997  Puff Daddy – I'll Be Missing You
+2009  Kesha – TiK ToK
+2012  Adele – Skyfall
+2015  Major Lazer – Lean On
+2016  Justin Timberlake – Can't Stop the Feeling!
+2017  Camila Cabello – Havana
+2018  Lady Gaga – Shallow
+2018  Post Malone – Sunflower
+2020  Jawsh 685 & Jason Derulo – Savage Love
+2023  Billie Eilish – What Was I Made For?
+2025  HUNTR/X – Golden
+1961  Elvis Presley – Can't Help Falling in Love
+1962  Booker T. & the M.G.'s – Green Onions
+1973  Sweet – The Ballroom Blitz
+1988  Phil Collins – A Groovy Kind of Love
+2000  DJ Ötzi – Hey Baby (Uhh, Ahh)
+2001  Christina Aguilera – Lady Marmalade
+2001  Train – Drops of Jupiter (Tell Me)
+2011  Pitbull – Give Me Everything
+2011  Bruno Mars – It Will Rain
+2016  Clean Bandit – Rockabye
+2017  Clean Bandit – Symphony
+2018  Clean Bandit – Solo
+2020  Justin Bieber – Holy
+2021  Justin Bieber – Peaches

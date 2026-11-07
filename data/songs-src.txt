@@ -99,7 +99,7 @@
 1980 | ABBA | The Winner Takes It All
 1980 | Joy Division | Love Will Tear Us Apart
 1980 | Kool & the Gang | Celebration
-1981 | Journey | Don't Stop Believin'
+1980 | Journey | Don't Stop Believin'
 1981 | Kim Wilde | Kids in America
 1981 | Soft Cell | Tainted Love
 1981 | Queen | Under Pressure
@@ -114,7 +114,7 @@
 1983 | Eurythmics | Sweet Dreams (Are Made of This)
 1983 | The Police | Every Breath You Take
 1983 | Bonnie Tyler | Total Eclipse of the Heart
-1983 | Cyndi Lauper | Girls Just Want to Have Fun
+1983 |1983di Lauper | Girls Just Want to Have Fun
 1983 | Irene Cara | Flashdance... What a Feeling
 1983 | David Bowie | Let's Dance
 1983 | Culture Club | Karma Chameleon
@@ -157,7 +157,7 @@
 1987 | George Michael | Faith
 1988 | Tracy Chapman | Fast Car
 1988 | Bobby McFerrin | Don't Worry Be Happy
-1989 | Madonna | Like a Prayer
+1988 | Madonna | Like a Prayer
 1989 | Billy Joel | We Didn't Start the Fire
 1989 | Kaoma | Lambada
 1989 | Technotronic | Pump Up the Jam
@@ -171,7 +171,7 @@
 1990 | Deee-Lite | Groove Is in the Heart
 1990 | Depeche Mode | Enjoy the Silence
 1990 | Matthias Reim | Verdammt, ich lieb' dich | de
-1991 | Nirvana | Smells Like Teen Spirit
+1990 | Nirvana | Smells Like Teen Spirit
 1991 | R.E.M. | Losing My Religion
 1991 | Bryan Adams | (Everything I Do) I Do It for You
 1991 | Queen | The Show Must Go On
@@ -184,7 +184,7 @@
 1992 | Rage Against the Machine | Killing in the Name
 1992 | Sir Mix-A-Lot | Baby Got Back
 1992 | Die Fantastischen Vier | Die da!?! | de
-1993 | 4 Non Blondes | What's Up?
+1992 | 4 Non Blondes | What's Up?
 1993 | Haddaway | What Is Love
 1993 | Culture Beat | Mr. Vain
 1993 | Meat Loaf | I'd Do Anything for Love (But I Won't Do That)
@@ -195,7 +195,7 @@
 1994 | Wet Wet Wet | Love Is All Around
 1994 | Green Day | Basket Case
 1994 | Mariah Carey | All I Want for Christmas Is You
-1994 | Scooter | Hyper Hyper | de
+1994 |1994oter | Hyper Hyper | de
 1995 | Oasis | Wonderwall
 1995 | Coolio | Gangsta's Paradise
 1995 | Alanis Morissette | You Oughta Know
@@ -243,12 +243,12 @@
 2001 | Destiny's Child | Survivor
 2001 | Rammstein | Sonne | de
 2001 | Seeed | Dickes B | de
-2002 | Eminem | Lose Yourself
+2001 | Eminem | Lose Yourself
 2002 | Avril Lavigne | Complicated
 2002 | Nelly | Hot in Herre
 2002 | Las Ketchup | The Ketchup Song (Aserejé)
 2002 | Coldplay | The Scientist
-2003 | Beyoncé | Crazy in Love
+2002 | Beyoncé | Crazy in Love
 2003 | OutKast | Hey Ya!
 2003 | 50 Cent | In da Club
 2003 | The White Stripes | Seven Nation Army
@@ -256,39 +256,39 @@
 2003 | Linkin Park | Numb
 2003 | Evanescence | Bring Me to Life
 2003 | Wir sind Helden | Guten Tag | de
-2004 | Green Day | Boulevard of Broken Dreams
-2004 | Usher | Yeah!
-2004 | Maroon 5 | This Love
+2002 | Green Day | Boulevard of Broken Dreams
+2002 | Usher | Yeah!
+2004 |2017oon 5 | This Love
 2004 | Franz Ferdinand | Take Me Out
 2004 | Rammstein | Amerika | de
 2004 | Juli | Perfekte Welle | de
 2004 | Silbermond | Durch die Nacht | de dz=41173971
-2005 | James Blunt | You're Beautiful
-2005 | Gorillaz | Feel Good Inc.
+2004 | James Blunt | You're Beautiful
+2004 | Gorillaz | Feel Good Inc.
 2005 | Kanye West | Gold Digger
 2005 | Daniel Powter | Bad Day
 2005 | Mariah Carey | We Belong Together
 2005 | Tokio Hotel | Durch den Monsun | de
-2006 | Gnarls Barkley | Crazy
+2005 | Gnarls Barkley | Crazy
 2006 | Shakira | Hips Don't Lie
 2006 | Nelly Furtado | Maneater
 2006 | Justin Timberlake | SexyBack
 2006 | Snow Patrol | Chasing Cars
 2006 | Amy Winehouse | Rehab
 2006 | Sportfreunde Stiller | '54, '74, '90, 2006 | de
-2007 | Rihanna | Umbrella
+2006 | Rihanna | Umbrella
 2007 | Timbaland | Apologize
 2007 | Leona Lewis | Bleeding Love
 2007 | Ich + Ich | Vom selben Stern | de
-2008 | Katy Perry | I Kissed a Girl
+2007 | Katy Perry | I Kissed a Girl
 2008 | Kings of Leon | Use Somebody
 2008 | Duffy | Mercy
-2008 | Lady Gaga | Just Dance
+2008 |2008y Gaga | Just Dance
 2008 | Lady Gaga | Poker Face
 2008 | Beyoncé | Single Ladies (Put a Ring on It)
 2008 | Peter Fox | Haus am See | de
 2008 | Peter Fox | Schwarz zu blau | de
-2009 | The Black Eyed Peas | I Gotta Feeling
+2008 | The Black Eyed Peas | I Gotta Feeling
 2009 | David Guetta | When Love Takes Over
 2009 | Kesha | TiK ToK
 2009 | Lady Gaga | Bad Romance
@@ -297,7 +297,7 @@
 2009 | Owl City | Fireflies
 
 # ---------- 2010er ----------
-2010 | Bruno Mars | Just the Way You Are
+2010 |2010no Mars | Just the Way You Are
 2010 | Katy Perry | California Gurls
 2010 | Shakira | Waka Waka (This Time for Africa)
 2010 | Eminem | Love the Way You Lie
@@ -305,7 +305,7 @@
 2010 | Yolanda Be Cool | We No Speak Americano
 2010 | Unheilig | Geboren um zu leben | de
 2010 | Lena | Satellite | de
-2011 | Adele | Someone Like You
+2010 | Adele | Someone Like You
 2011 | LMFAO | Party Rock Anthem
 2011 | Maroon 5 | Moves like Jagger
 2011 | Rihanna | We Found Love
@@ -320,15 +320,15 @@
 2012 | Taylor Swift | We Are Never Ever Getting Back Together
 2012 | Adele | Skyfall
 2012 | Cro | Easy | de
-2013 | Daft Punk | Get Lucky
-2013 | Avicii | Wake Me Up
+2012 | Daft Punk | Get Lucky
+2012 | Avicii | Wake Me Up
 2013 | Robin Thicke | Blurred Lines
 2013 | Pharrell Williams | Happy
 2013 | Lorde | Royals
 2013 | Katy Perry | Roar
 2013 | Miley Cyrus | Wrecking Ball
 2013 | Helene Fischer | Atemlos durch die Nacht | de
-2014 | Mark Ronson | Uptown Funk
+2013 | Mark Ronson | Uptown Funk
 2014 | Taylor Swift | Shake It Off
 2014 | Meghan Trainor | All About That Bass
 2014 | Sam Smith | Stay with Me

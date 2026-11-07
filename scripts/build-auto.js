@@ -52,7 +52,7 @@ const cleanTitle = t => baseTitle(t.title_short || t.title).replace(/\s+[-–—
     .filter(l => /^\d{4}\s*\|/.test(l)).map(l => l.split('|').map(s => s.trim()));
   const have = new Set(curated.map(([, a, t]) => key(t, a)));
   const haveIds = new Set(curated.map(c => (c[3] || '').match(/dz=(\d+)/)?.[1]).filter(Boolean).map(Number));
-  try { for (const s of JSON.parse(fs.readFileSync(path.join(DATA, 'songs.json'), 'utf8')).songs) haveIds.add(s.id); } catch {}
+  try { for (const s of JSON.parse(fs.readFileSync(path.join(DATA, "songs.json"), "utf8")).songs) if (!s.m) haveIds.add(s.id); } catch {}   // nur handverlesene – Auto-Songs (m) kommen hier neu
 
   // Kandidaten sammeln
   const cand = new Map();   // key → { id, t, a, r, de }
@@ -80,12 +80,19 @@ const cleanTitle = t => baseTitle(t.title_short || t.title).replace(/\s+[-–—
   const list = [...cand.values()].sort((x, y) => y.r - x.r);
   const todo = list.filter(c => !(c.id in cache));
   console.log(`${list.length} Kandidaten, ${todo.length} noch bei MusicBrainz nachzuschlagen`);
+  // Zweite Quelle: Erscheinungsdatum des Deezer-Albums. MusicBrainz allein ist bei rund jedem zehnten Song daneben
+  // (fehlende Original-Singles, falsch datierte Einträge) – darum kommt ein Song nur rein, wenn BEIDE dasselbe Jahr nennen.
+  // Best-of-/Remaster-Alben fallen dabei automatisch raus (Deezer nennt dann ein späteres Jahr).
+  const DZC = path.join(DATA, 'dz-years.json');
+  let dzy = {};
+  try { dzy = JSON.parse(fs.readFileSync(DZC, 'utf8')); } catch {}
+  const agrees = c => cache[c.id] >= 1950 && cache[c.id] <= 2026 && dzy[c.id] === cache[c.id];
   const write = () => {
-    const lines = list.filter(c => cache[c.id] >= 1950 && cache[c.id] <= 2026)
+    const lines = list.filter(agrees)
       .sort((x, y) => cache[x.id] - cache[y.id] || x.a.localeCompare(y.a))
       .map(c => `${cache[c.id]} | ${c.a.replace(/\|/g, '/')} | ${c.t.replace(/\|/g, '/')} | auto dz=${c.id}${c.de ? ' de' : ''}`);
     fs.writeFileSync(path.join(DATA, 'songs-auto.txt'),
-      `# Automatisch erzeugt von scripts/build-auto.js – nicht von Hand bearbeiten (Korrekturen in songs-src.txt eintragen,\n# dort haben sie Vorrang). Jahr = Originaljahr laut MusicBrainz.\n${lines.join('\n')}\n`);
+      `# Automatisch erzeugt von scripts/build-auto.js – nicht von Hand bearbeiten (Korrekturen in songs-src.txt eintragen,\n# dort haben sie Vorrang). Jahr = MusicBrainz und Deezer-Album nennen dasselbe Erscheinungsjahr.\n${lines.join('\n')}\n`);
     return lines.length;
   };
   for (const [i, c] of todo.entries()) {
@@ -93,5 +100,16 @@ const cleanTitle = t => baseTitle(t.title_short || t.title).replace(/\s+[-–—
     catch (e) { console.log('Fehler bei', c.a, '-', c.t, e.message); }
     if (i % 50 === 0) console.log(i, '/', todo.length, '→', write(), 'Songs mit Jahr');
   }
-  console.log(`Fertig: ${write()} Songs mit Originaljahr in data/songs-auto.txt`);
+  // Deezer-Albumjahr für alle mit MusicBrainz-Jahr (50 Anfragen / 5 s erlaubt)
+  const dzTodo = list.filter(c => cache[c.id] && !(c.id in dzy));
+  console.log(`${dzTodo.length} Deezer-Albumjahre nachzuschlagen`);
+  for (const [i, c] of dzTodo.entries()) {
+    const t = await dz('/track/' + c.id);
+    dzy[c.id] = parseInt(t.release_date || t.album?.release_date) || 0;
+    if (i % 100 === 0) { fs.writeFileSync(DZC, JSON.stringify(dzy)); console.log('Deezer', i, '/', dzTodo.length); }
+    await sleep(110);
+  }
+  fs.writeFileSync(DZC, JSON.stringify(dzy));
+  const withMb = list.filter(c => cache[c.id] >= 1950).length;
+  console.log(`Fertig: ${write()} von ${withMb} Songs mit übereinstimmendem Jahr (MusicBrainz = Deezer) in data/songs-auto.txt`);
 })();

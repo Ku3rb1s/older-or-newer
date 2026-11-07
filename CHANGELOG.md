@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.5 – 07.11.2026
+- Abgleich: gemeinsame Technik aktualisiert (Diamanten aus Gold Record werden mit abgeglichen)
+
 ## 1.6.4 – 07.11.2026
 - Spiele-Menü: neues Spiel **Hit or Miss** – Stimmt’s oder stimmt’s nicht? Musik-Quiz zum Wischen
 

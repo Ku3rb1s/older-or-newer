@@ -18,9 +18,6 @@ header{max-width:640px}
 /* ---------- Start ---------- */
 .home-title{font-family:Outfit,system-ui,sans-serif;font-weight:900;font-size:clamp(2rem,8vw,3rem);line-height:1.25;padding:.12em .05em 0;letter-spacing:-.02em;
   color:var(--text)}
-/* Titel in drei Vollfarben (kein Verlauf – der wirkte in der Mitte verwaschen): älter rot, „oder“ weiß, neuer grün */
-.home-title .t-old{color:#f87171;text-shadow:0 6px 28px rgba(239,68,68,.45)}
-.home-title .t-new{color:#4ade80;text-shadow:0 6px 28px rgba(34,197,94,.45)}
 .demo{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px auto 24px}
 .demo-card{width:min(130px,34vw);aspect-ratio:1;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
   background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.03));border:1px solid var(--line);

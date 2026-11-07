@@ -5,7 +5,6 @@
   name: "Français",
   flag: "🇫🇷",
   dict: {
-    "{a} oder {b}?": "{a} ou {b} ?",
     "Alle Songs, ab 1 Jahr Abstand – und nur 10 Sekunden pro Song.": "Tous les morceaux, dès 1 an d’écart – et seulement 10 secondes par morceau.",
     "Alle Songs, oft nur 2 oder 3 Jahre auseinander.": "Tous les morceaux, souvent à 2 ou 3 ans d’écart seulement.",
     "Bekannte Songs, mindestens 5 Jahre auseinander.": "Morceaux connus, au moins 5 ans d’écart.",

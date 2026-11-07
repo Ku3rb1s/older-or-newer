@@ -403,8 +403,6 @@ function show(id) {
 function renderHome() {
   const segOn = (id, v) => $$(`#${id} button`).forEach(b => b.classList.toggle('on', b.dataset.v === v));
   segOn('setPool', opt.pool); segOn('setDiff', opt.diff); segOn('setMode', opt.mode);
-  // Titel: „Älter“ rot, „neuer“ grün – Satzbau je Sprache über den Platzhalter-Text
-  $('#homeTitle').innerHTML = tx('{a} oder {b}?', { a: `<span class="t-old">${esc(tx('Älter'))}</span>`, b: `<span class="t-new">${esc(tx('neuer'))}</span>` });
   $('#modeInfo').textContent = tx(MODE_INFO[opt.mode]);
   $('#diffInfo').textContent = tx(DIFF_INFO[opt.diff]);
   const best = LS.get(bestKey(), 0);

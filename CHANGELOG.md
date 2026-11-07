@@ -1,7 +1,7 @@
 # Neuerungen
 
 ## 1.3.1 – 07.11.2026
-- Titel „Älter oder neuer?“ in klaren Farben statt Verlauf: „Älter“ rot, „neuer“ grün
+- Titel „Älter oder neuer?“ schlicht in Weiß statt mit Farbverlauf
 - Jukebox zeigt neue Logos sofort (Icon-Adresse mit Versionsnummer)
 
 ## 1.3.0 – 07.11.2026

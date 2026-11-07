@@ -1,10 +1,11 @@
 /* Older or Newer – nur das, was es in der Basis (css/base.css aus Musik-Bingo) nicht gibt */
-:root{--oon1:#22d3ee;--oon2:#a78bfa;--cat:#22d3ee;--good:#22c55e;--bad:#ff5a6a}
+/* Farben wie im Logo „Zeitreise“: Türkis = neuer (vorwärts), Gold = älter (zurück) */
+:root{--oon1:#2dd4bf;--oon2:#eab308;--neu2:#99f6e4;--alt2:#fde68a;--cat:#2dd4bf;--accent:#2dd4bf;--good:#22c55e;--bad:#ff5a6a}
 .center{text-align:center}
 main{max-width:640px}
 header{max-width:640px}
 .logo img{box-shadow:0 6px 20px -6px var(--oon2)}
-.logo span{background:linear-gradient(90deg,#fff,#c9f3ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo span{background:linear-gradient(90deg,#fff,#ccfbf1);-webkit-background-clip:text;background-clip:text;color:transparent}
 .logo-btn{background:none;color:inherit;padding:0;border-radius:12px;box-shadow:none;font-size:1.4rem}
 .logo-btn:active{transform:scale(.97)}
 @media (hover:hover){.logo-btn:hover{filter:brightness(1.12)}}
@@ -37,7 +38,7 @@ header{max-width:640px}
 .song{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:12px;border-radius:22px;text-align:left;
   background:rgba(255,255,255,.055);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.08);cursor:pointer;
   transition:background .3s,border-color .3s,box-shadow .3s}
-.song.next{background:color-mix(in srgb,var(--oon2) 14%,rgba(255,255,255,.04));border-color:color-mix(in srgb,var(--oon2) 40%,transparent)}
+.song.next{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22)}
 .song.enter{animation:enter .42s cubic-bezier(.3,1.4,.5,1)}
 @keyframes enter{from{transform:translateY(24px) scale(.96);opacity:0}}
 .song.ok{background:color-mix(in srgb,var(--good) 20%,rgba(255,255,255,.04));border-color:var(--good);box-shadow:0 0 0 1px var(--good) inset,0 12px 30px -14px var(--good)}
@@ -48,7 +49,7 @@ header{max-width:640px}
 .cv{position:relative;width:clamp(76px,22vw,104px);aspect-ratio:1;padding:0;border-radius:16px;overflow:hidden;background:#111;box-shadow:0 8px 22px -10px #000}
 .cv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .vinyl{position:absolute;inset:6%;border-radius:50%;
-  background:radial-gradient(circle,#111 0 7%,var(--oon2) 7.5% 26%,#151518 26.5%),repeating-radial-gradient(circle,#1b1b1f 0 2px,#111114 2px 4px)}
+  background:radial-gradient(circle,#111 0 7%,var(--oon1) 7.5% 26%,#151518 26.5%),repeating-radial-gradient(circle,#1b1b1f 0 2px,#111114 2px 4px)}
 .song.playing .vinyl{animation:spin 2.4s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .pp{position:absolute;inset:0;z-index:2;display:grid;place-items:center;background:rgba(0,0,0,.28);transition:background .2s}
@@ -69,7 +70,7 @@ header{max-width:640px}
 .song.blind .info .t{letter-spacing:.2em;color:var(--muted)}
 .yr{font-family:Outfit,system-ui,sans-serif;font-weight:900;font-size:clamp(1.9rem,8vw,2.6rem);line-height:1;padding-right:6px;font-variant-numeric:tabular-nums;min-width:2.4em;text-align:right}
 .song.known .yr{color:var(--oon1)}
-.song.next .yr{color:var(--oon2)}
+.song.next .yr{color:var(--text);opacity:.7}
 .song.ok .yr{color:var(--good)}
 .song.bad .yr{color:var(--bad)}
 .yr.counting{opacity:.85}
@@ -78,14 +79,14 @@ header{max-width:640px}
 .vs b{font-weight:800}
 .vs .good{color:var(--good)}.vs .wrong{color:var(--bad)}
 
-/* Älter / Neuer: links die Vergangenheit (violett, Pfeil runter), rechts die Zukunft (cyan, Pfeil hoch) – wie im Logo */
+/* Älter / Neuer: links die Vergangenheit (gold), rechts die Zukunft (türkis) – wie im Logo */
 .answer{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-.ans{--c:var(--oon2);--c2:#c4b5fd;position:relative;display:flex;align-items:center;justify-content:flex-start;gap:12px;
+.ans{--c:var(--oon2);--c2:var(--alt2);position:relative;display:flex;align-items:center;justify-content:flex-start;gap:12px;
   padding:14px 16px;border-radius:20px;text-align:left;white-space:normal;color:var(--text);
   background:linear-gradient(160deg,color-mix(in srgb,var(--c) 30%,rgba(255,255,255,.04)),color-mix(in srgb,var(--c) 10%,rgba(0,0,0,.25)));
   border:1px solid color-mix(in srgb,var(--c) 55%,transparent);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 14px 30px -16px var(--c);transition:transform .12s,box-shadow .2s,opacity .25s,filter .2s}
-.ans.newer{--c:var(--oon1);--c2:#a5f3fc}
+.ans.newer{--c:var(--oon1);--c2:var(--neu2)}
 .ans-ic{width:48px;height:48px;flex:none;border-radius:50%;display:grid;place-items:center;color:#0b1020;
   background:linear-gradient(160deg,var(--c2),var(--c));box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 16px -6px var(--c)}
 .ans-ic .ic{width:26px;height:26px;stroke-width:2.8}
@@ -123,9 +124,14 @@ header{max-width:640px}
 .confetti i{position:absolute;top:-20px;width:9px;height:14px;border-radius:2px;animation:fall linear forwards}
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
 #statsBox .cell b{font-variant-numeric:tabular-nums}
-#sheetSettings .volume{display:flex;align-items:center;gap:10px}
-#sheetSettings .volume input{flex:1}
-#sheetSettings .volume button{background:none;color:var(--text);padding:4px}
+/* Lautstärke direkt im Spiel (iPhone/iPad: Lautstärke regeln nur die Tasten – dort nur Stumm-Knopf) */
+.vol-game{display:flex;align-items:center;justify-content:center;gap:10px;margin:16px auto 0;max-width:300px;color:var(--muted)}
+.vol-game input{flex:1;min-width:0}
+.vol-game button{background:none;color:var(--text);padding:6px;border-radius:50%}
+.vol-game button .ic{width:1.4em;height:1.4em}
+.vol-game #volVal{min-width:3ch;text-align:right;font-size:.85rem;font-variant-numeric:tabular-nums}
+.vol-game.off input{opacity:.4}
+html.ios .vol-game input,html.ios .vol-game #volVal{display:none}
 
 /* Versionsnummer → Neuerungen (wie Musik-Bingo) */
 .app-version{display:flex;flex-direction:column;align-items:center;gap:3px;width:100%;margin-top:28px;padding:10px;background:none;box-shadow:none;
@@ -148,3 +154,19 @@ header{max-width:640px}
   .song{gap:11px;padding:10px}
   .info .t{font-size:1rem}
 }
+
+/* Schwierigkeit: Balken wie bei einer Signalanzeige (1–4 gefüllt) */
+.seg.diff button{gap:3px}
+.lvl{display:flex;align-items:flex-end;gap:2px;height:14px;margin-bottom:3px}
+.lvl b{width:4px;border-radius:2px;background:rgba(255,255,255,.18)}
+.lvl b:nth-child(1){height:5px}.lvl b:nth-child(2){height:8px}.lvl b:nth-child(3){height:11px}.lvl b:nth-child(4){height:14px}
+[data-v="easy"] .lvl b:nth-child(-n+1),[data-v="normal"] .lvl b:nth-child(-n+2),[data-v="hard"] .lvl b:nth-child(-n+3),[data-v="pro"] .lvl b{background:var(--oon1)}
+[data-v="hard"] .lvl b:nth-child(-n+3){background:var(--oon2)}
+[data-v="pro"] .lvl b{background:#f97316}
+
+/* Bedenkzeit (Profi) */
+.timebar{position:relative;height:22px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:2px}
+.timebar i{position:absolute;inset:0;transform-origin:left;background:linear-gradient(90deg,var(--oon1),var(--neu2));transition:background .3s}
+.timebar span{position:relative;display:block;text-align:center;font-size:.75rem;font-weight:800;line-height:22px;color:#0b1416;font-variant-numeric:tabular-nums}
+.timebar.urgent i{background:linear-gradient(90deg,#f97316,var(--bad))}
+.timebar.urgent span{color:#fff}

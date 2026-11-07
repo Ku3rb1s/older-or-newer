@@ -1,28 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Older or Newer: Platte wie bei Musik-Bingo/Needle Drop. Etikett oben/unten geteilt: Pfeil hoch = neuer, Pfeil runter = älter -->
+  <!-- Older or Newer – „Zeitreise“: Platte als Uhr. Oben Pfeil nach rechts (türkis = neuer, vorwärts),
+       unten Pfeil nach links (gold = älter, zurück) -->
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".55" stop-color="#6366f1"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
-    <linearGradient id="top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
-    <linearGradient id="bot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
-    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".4"/></filter>
-    <clipPath id="lab"><circle cx="256" cy="256" r="112"/></clipPath>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d3b3c"/><stop offset=".55" stop-color="#0b1a20"/><stop offset="1" stop-color="#2b1d05"/></linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset=".55" stop-color="#2dd4bf" stop-opacity=".22"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></radialGradient>
+    <linearGradient id="neu" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#99f6e4"/><stop offset="1" stop-color="#14b8a6"/></linearGradient>
+    <linearGradient id="alt" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#eab308"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#0d9488"/></linearGradient>
+    <marker id="hn" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#14b8a6"/></marker>
+    <marker id="ha" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#eab308"/></marker>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity=".5"/></filter>
   </defs>
   <rect width="512" height="512" fill="url(#bg)"/>
-  <g transform="translate(256 256) scale(.9) translate(-256 -256)">
-    <g filter="url(#sh)"><circle cx="256" cy="256" r="210" fill="#111114"/></g>
-    <g fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="2">
-      <circle cx="256" cy="256" r="196"/><circle cx="256" cy="256" r="180"/><circle cx="256" cy="256" r="164"/><circle cx="256" cy="256" r="148"/><circle cx="256" cy="256" r="132"/>
-    </g>
-    <path d="M256 256 L108 107 A210 210 0 0 1 170 64 Z" fill="#fff" fill-opacity=".09"/>
-    <path d="M256 256 L404 405 A210 210 0 0 1 342 448 Z" fill="#fff" fill-opacity=".09"/>
-    <g clip-path="url(#lab)">
-      <rect x="144" y="144" width="224" height="112" fill="url(#top)"/>
-      <rect x="144" y="256" width="224" height="112" fill="url(#bot)"/>
-    </g>
-    <rect x="144" y="252" width="224" height="8" fill="#111114"/>
-    <g fill="none" stroke="#0b1020" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M216 222l40-40 40 40"/>
-      <path d="M216 290l40 40 40-40"/>
-    </g>
+  <circle cx="256" cy="256" r="230" fill="url(#glow)"/>
+
+  <!-- Pfeile: Bögen um die Platte (r = 198) -->
+  <g fill="none" stroke-width="28" stroke-linecap="round">
+    <path d="M70 188A198 198 0 0 1 430 176" stroke="url(#neu)" marker-end="url(#hn)"/>
+    <path d="M442 324A198 198 0 0 1 82 336" stroke="url(#alt)" marker-end="url(#ha)"/>
   </g>
+
+  <!-- Platte -->
+  <g filter="url(#sh)"><circle cx="256" cy="256" r="150" fill="#0d0d11"/></g>
+  <g fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="2">
+    <circle cx="256" cy="256" r="138"/><circle cx="256" cy="256" r="124"/><circle cx="256" cy="256" r="110"/><circle cx="256" cy="256" r="96"/>
+  </g>
+  <path d="M256 256 L150 150 A150 150 0 0 1 196 118 Z" fill="#fff" fill-opacity=".07"/>
+  <path d="M256 256 L362 362 A150 150 0 0 1 316 394 Z" fill="#fff" fill-opacity=".07"/>
+
+  <!-- Etikett als Zifferblatt -->
+  <circle cx="256" cy="256" r="80" fill="url(#face)"/>
+  <g stroke="#063b37" stroke-width="7" stroke-linecap="round">
+    <path d="M256 186v14M256 312v14M186 256h14M312 256h14"/>
+  </g>
+  <g stroke="#063b37" stroke-width="4" stroke-linecap="round" stroke-opacity=".6">
+    <path d="M291 195.4l-4 7M325 221l-7 4M325 291l-7-4M291 316.6l-4-7M221 316.6l4-7M187 291l7-4M187 221l7 4M221 195.4l4 7"/>
+  </g>
+  <g stroke="#0b1416" stroke-width="12" stroke-linecap="round">
+    <path d="M256 256V208"/><path d="M256 256l36 20"/>
+  </g>
+  <circle cx="256" cy="256" r="11" fill="#eab308" stroke="#0b1416" stroke-width="4"/>
 </svg>

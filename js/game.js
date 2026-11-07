@@ -1,13 +1,27 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.1.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.2.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
-// Mindestabstand in Jahren zwischen zwei Songs – gleiche Jahre kommen nie vor
-const GAPS = { easy: 8, normal: 3, hard: 1 };
-const DIFF_NAMES = { easy: 'Leicht', normal: 'Normal', hard: 'Schwer' };
+/* Schwierigkeit:
+   gap  = Mindestabstand in Jahren zwischen zwei Songs (gleiche Jahre kommen nie vor)
+   top  = nur die bekanntesten x % der Songs (nach Deezer-Rang) – große Hits sind leichter einzuordnen
+   time = Sekunden Bedenkzeit pro Song (0 = unbegrenzt); läuft die Zeit ab, zählt es als Fehler */
+const DIFF = {
+  easy: { gap: 10, top: 0.5, time: 0 },
+  normal: { gap: 5, top: 0.8, time: 0 },
+  hard: { gap: 2, top: 1, time: 0 },
+  pro: { gap: 1, top: 1, time: 10 },
+};
+const DIFF_NAMES = { easy: 'Leicht', normal: 'Normal', hard: 'Schwer', pro: 'Profi' };
+const DIFF_INFO = {
+  easy: 'Nur die bekanntesten Hits, mindestens 10 Jahre auseinander – zum Reinkommen.',
+  normal: 'Bekannte Songs, mindestens 5 Jahre auseinander.',
+  hard: 'Alle Songs, oft nur 2 oder 3 Jahre auseinander.',
+  pro: 'Alle Songs, ab 1 Jahr Abstand – und nur 10 Sekunden pro Song.',
+};
 const POOL_NAMES = { all: 'Alle', intl: 'International', de: 'Deutsch' };
 const MODE_NAMES = { show: 'Mit Titel', blind: 'Nur hören' };
 const MODE_INFO = {
@@ -37,10 +51,10 @@ const opt = {
   auto: LS.get('auto', true), sfx: LS.get('sfx', true), vol: LS.get('vol', 80), muted: false, theme: sharedTheme.get(),
 };
 if (!POOL_NAMES[opt.pool]) opt.pool = 'all';
-if (!GAPS[opt.diff]) opt.diff = 'normal';
+if (!DIFF[opt.diff]) opt.diff = 'normal';
 if (!MODE_NAMES[opt.mode]) opt.mode = 'show';
 
-const bestKey = () => `best.${opt.pool}.${opt.diff}.${opt.mode}`;
+const bestKey = () => `best2.${opt.pool}.${opt.diff}.${opt.mode}`;
 const modeLabel = () => [POOL_NAMES[opt.pool], DIFF_NAMES[opt.diff], MODE_NAMES[opt.mode]].map(s => tx(s)).join(' · ');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -56,9 +70,16 @@ async function loadSongs() {
   return SONGS;
 }
 const poolOf = p => SONGS.filter(s => p === 'all' || (p === 'de' ? s.de : !s.de));
+// Spiel-Pool: Songs der Auswahl, je nach Schwierigkeit nur die bekanntesten (nach Deezer-Rang)
+function gamePool() {
+  const all = poolOf(opt.pool).sort((a, b) => (b.r || 0) - (a.r || 0));
+  return all.slice(0, Math.max(40, Math.round(all.length * DIFF[opt.diff].top)));
+}
 
 /* ---------- Wiedergabe: 30-s-Vorschau von Deezer ----------
    Die Vorschau-Links von Deezer laufen nach einiger Zeit ab – darum wird der Link erst kurz vorher per /track/{id} geholt. */
+// iPhone/iPad: audio.volume wird ignoriert (nur Gerätetasten) – dort gibt es im Spiel nur den Stumm-Knopf
+if (/iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) document.documentElement.classList.add('ios');
 const player = new Audio();
 player.preload = 'auto';
 let playingId = null;
@@ -98,8 +119,10 @@ function renderPlaying() {
   $$('.song').forEach(c => c.classList.toggle('waiting', +c.dataset.id === playingId && player.paused));
 }
 function applyVol() {
-  player.volume = opt.muted ? 0 : opt.vol / 100;
-  const r = $('#vol'); if (!r) return;
+  player.muted = opt.muted;
+  player.volume = opt.vol / 100;
+  $('#volBox').classList.toggle('off', opt.muted);
+  const r = $('#vol');
   r.value = opt.vol; r.style.setProperty('--p', opt.vol + '%');
   $('#volVal').textContent = opt.muted ? '–' : opt.vol;
   $('#volMute use').setAttribute('href', opt.muted || !opt.vol ? '#i-mute' : '#i-vol');
@@ -108,7 +131,7 @@ function applyVol() {
 /* ---------- Spiel ---------- */
 let G = null;
 function pickNext(cur) {
-  const gap = GAPS[opt.diff];
+  const gap = DIFF[opt.diff].gap;
   const free = G.pool.filter(s => !G.used.has(s.id) && s.y !== cur.y);
   // Wunsch: genug Abstand und nicht derselbe Interpret – sonst schrittweise lockerer
   const tries = [
@@ -125,7 +148,7 @@ function pickNext(cur) {
 
 async function startGame() {
   try { await loadSongs(); } catch { return toast(tx('Die Songliste konnte nicht geladen werden.')); }
-  const pool = poolOf(opt.pool);
+  const pool = gamePool();
   const first = pool[Math.floor(Math.random() * pool.length)];
   G = { pool, used: new Set([first.id]), chain: [first], streak: 0, best: LS.get(bestKey(), 0), locked: false, over: false };
   G.cur = first;
@@ -157,10 +180,46 @@ function cardHtml(s, kind) {
 }
 function renderBoard(fresh = false) {
   const b = $('#board');
-  b.innerHTML = cardHtml(G.cur, 'known') + `<div class="vs">${tx('Ist dieser Song älter oder neuer?')}</div>` + cardHtml(G.next, 'next');
+  b.innerHTML = cardHtml(G.cur, 'known') + `<div class="vs">${tx('Ist dieser Song älter oder neuer?')}</div>` + cardHtml(G.next, 'next')
+    + (DIFF[opt.diff].time ? `<div class="timebar" id="timebar"><i></i><span></span></div>` : '');
   if (fresh) b.querySelector('.song.next').classList.add('enter');
   renderPlaying();
+  if (fresh) armTimer();
 }
+
+/* ---------- Bedenkzeit (Profi) ----------
+   Die Uhr startet, sobald der neue Song wirklich spielt (Laden zählt nicht mit). Ohne Autoplay oder wenn das Laden
+   hängt, startet sie spätestens nach 3 Sekunden. Läuft sie ab, zählt das wie ein falscher Tipp. */
+let timerRaf = 0, timerFallback = 0;
+function armTimer() {
+  stopTimer();
+  if (!DIFF[opt.diff].time || !G) return;
+  G.tEnd = 0;
+  drawTimer(1);
+  timerFallback = setTimeout(startTimer, opt.auto ? 3000 : 600);
+}
+function startTimer() {
+  if (!G || G.locked || G.over || G.tEnd || !DIFF[opt.diff].time) return;
+  clearTimeout(timerFallback);
+  const total = DIFF[opt.diff].time * 1000;
+  G.tEnd = performance.now() + total;
+  const step = now => {
+    if (!G || G.locked || G.over) return;
+    const left = G.tEnd - now;
+    drawTimer(Math.max(0, left / total), left);
+    if (left <= 0) return guess(null);
+    timerRaf = requestAnimationFrame(step);
+  };
+  timerRaf = requestAnimationFrame(step);
+}
+function stopTimer() { cancelAnimationFrame(timerRaf); clearTimeout(timerFallback); }
+function drawTimer(k, left = DIFF[opt.diff].time * 1000) {
+  const tb = $('#timebar'); if (!tb) return;
+  tb.querySelector('i').style.transform = `scaleX(${k})`;
+  tb.querySelector('span').textContent = Math.ceil(left / 1000) + ' s';
+  tb.classList.toggle('urgent', left < 3000);
+}
+player.addEventListener('playing', () => { if (G && playingId === G.next?.id) startTimer(); });
 function renderMeta() {
   $('#streakPill').innerHTML = `<svg class="ic"><use href="#i-flame"/></svg>${tx('Serie {n}', { n: G.streak })}`;
   $('#gameBest').textContent = tx('Rekord {n}', { n: Math.max(G.best, G.streak) });
@@ -179,9 +238,11 @@ function setAnswer(on, picked = null, hide = false) {
 async function guess(dir) {
   if (!G || G.locked || G.over) return;
   G.locked = true;
+  stopTimer();
   setAnswer(false, dir);
   const { cur, next } = G;
-  const ok = dir === 'newer' ? next.y > cur.y : next.y < cur.y;
+  // dir = null: Bedenkzeit abgelaufen
+  const ok = dir === 'newer' ? next.y > cur.y : dir === 'older' ? next.y < cur.y : false;
   const card = $('#board .song.next');
   // Blind: Titel, Interpret und Cover jetzt zeigen
   if (card.classList.contains('blind')) {
@@ -194,7 +255,7 @@ async function guess(dir) {
   card.classList.add(ok ? 'ok' : 'bad');
   $('#board .vs').innerHTML = ok
     ? `<b class="good">${tx('Richtig!')}</b> ${next.y > cur.y ? tx('{d} Jahre neuer', { d: next.y - cur.y }) : tx('{d} Jahre älter', { d: cur.y - next.y })}`
-    : `<b class="wrong">${tx('Leider falsch')}</b> ${next.y > cur.y ? tx('{d} Jahre neuer', { d: next.y - cur.y }) : tx('{d} Jahre älter', { d: cur.y - next.y })}`;
+    : `<b class="wrong">${dir ? tx('Leider falsch') : '⏱ ' + tx('Zeit abgelaufen')}</b> ${next.y > cur.y ? tx('{d} Jahre neuer', { d: next.y - cur.y }) : tx('{d} Jahre älter', { d: cur.y - next.y })}`;
   sound(ok ? 'ok' : 'miss');
   if (!ok) {
     G.over = true; G.miss = { cur, next, dir };
@@ -300,8 +361,8 @@ function renderStats() {
     [tx('Weiteste Zeitreise'), tx('{n} Jahre', { n: st.years || 0 })],
   ];
   const bests = [];
-  for (const p in POOL_NAMES) for (const d in GAPS) for (const m in MODE_NAMES) {
-    const v = LS.get(`best.${p}.${d}.${m}`, 0);
+  for (const p in POOL_NAMES) for (const d in DIFF) for (const m in MODE_NAMES) {
+    const v = LS.get(`best2.${p}.${d}.${m}`, 0);
     if (v) bests.push([[POOL_NAMES[p], DIFF_NAMES[d], MODE_NAMES[m]].map(s => tx(s)).join(' · '), v]);
   }
   $('#statsBox').innerHTML = `<div class="group" style="margin-top:14px">${rows.map(([k, v]) => `<div class="cell"><span class="grow">${k}</span><b>${v}</b></div>`).join('')}</div>`
@@ -327,7 +388,7 @@ function confetti(n = 90) {
   if (!opt.sfx || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const box = document.createElement('div');
   box.className = 'confetti';
-  const colors = ['#22d3ee', '#a78bfa', '#fbbf24', '#ffffff', '#ff4fa3'];
+  const colors = ['#2dd4bf', '#eab308', '#99f6e4', '#ffffff', '#fde68a'];
   box.innerHTML = Array.from({ length: n }, () => `<i style="left:${Math.random() * 100}%;background:${colors[Math.floor(Math.random() * colors.length)]};animation-duration:${1.8 + Math.random() * 1.6}s;animation-delay:${Math.random() * .4}s;transform:rotate(${Math.random() * 360}deg)"></i>`).join('');
   document.body.appendChild(box);
   setTimeout(() => box.remove(), 4200);
@@ -343,6 +404,7 @@ function renderHome() {
   const segOn = (id, v) => $$(`#${id} button`).forEach(b => b.classList.toggle('on', b.dataset.v === v));
   segOn('setPool', opt.pool); segOn('setDiff', opt.diff); segOn('setMode', opt.mode);
   $('#modeInfo').textContent = tx(MODE_INFO[opt.mode]);
+  $('#diffInfo').textContent = tx(DIFF_INFO[opt.diff]);
   const best = LS.get(bestKey(), 0);
   $('#bestPill').textContent = best ? '🏆 ' + tx('Rekord {n}', { n: best }) : tx('Noch kein Rekord');
   if (SONGS.length) {
@@ -427,7 +489,7 @@ $('#board').addEventListener('click', e => {
   if (s) toggle(s);
 });
 $('#shareBtn').onclick = shareResult;
-const goHome = () => { stop(); G = null; renderHome(); show('home'); };
+const goHome = () => { stop(); stopTimer(); G = null; renderHome(); show('home'); };
 function leave() {
   if (G && !G.over && G.streak > 0 && !$('#game').classList.contains('hidden') && !confirm(tx('Spiel beenden? Deine Serie geht verloren.'))) return;
   goHome();

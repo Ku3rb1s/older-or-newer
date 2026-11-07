@@ -6,10 +6,10 @@
 <meta name="theme-color" content="#0c0c0f">
 <title>Older or Newer</title>
 <meta name="description" content="Älter oder neuer? Ein Song läuft – war er vor oder nach dem letzten? Musik-Quiz wie Higher or Lower.">
-<link rel="apple-touch-icon" href="https://ku3rb1s.github.io/older-or-newer/apple-touch-icon.png?v=2">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
-<link rel="manifest" href="manifest.json?v=2">
+<link rel="apple-touch-icon" href="https://ku3rb1s.github.io/older-or-newer/apple-touch-icon.png?v=3">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+<link rel="manifest" href="manifest.json?v=3">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,7 +17,7 @@
 <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/fonts.css?v=1">
 <link rel="stylesheet" href="css/base.css?v=1">
-<link rel="stylesheet" href="css/app.css?v=2">
+<link rel="stylesheet" href="css/app.css?v=3">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -46,7 +46,7 @@
 <div class="bg"><i></i><i></i><i></i></div>
 
 <header>
-  <button class="logo logo-btn" id="logoBtn" aria-label="Zur Startseite"><img src="icon-192.png?v=2" alt=""><span>Older or Newer</span></button>
+  <button class="logo logo-btn" id="logoBtn" aria-label="Zur Startseite"><img src="icon-192.png?v=3" alt=""><span>Older or Newer</span></button>
   <div class="hdr-r">
     <button class="hbtn hidden" id="btnQuit" aria-label="Spiel beenden"><svg class="ic"><use href="#i-x"/></svg><span class="lbl">Beenden</span></button>
     <button class="hbtn" id="btnSettings" aria-label="Einstellungen"><svg class="ic"><use href="#i-sliders"/></svg><span class="lbl">Einstellungen</span></button>
@@ -74,18 +74,20 @@
     </section>
 
     <section class="glass panel">
+      <div class="group-h">Schwierigkeit</div>
+      <div class="seg diff" id="setDiff">
+        <button data-v="easy"><i class="lvl" aria-hidden="true"><b></b><b></b><b></b><b></b></i>Leicht<small>≥ 10 Jahre</small></button>
+        <button data-v="normal"><i class="lvl" aria-hidden="true"><b></b><b></b><b></b><b></b></i>Normal<small>≥ 5 Jahre</small></button>
+        <button data-v="hard"><i class="lvl" aria-hidden="true"><b></b><b></b><b></b><b></b></i>Schwer<small>≥ 2 Jahre</small></button>
+        <button data-v="pro"><i class="lvl" aria-hidden="true"><b></b><b></b><b></b><b></b></i>Profi<small>⏱ 10 s</small></button>
+      </div>
+      <div class="group-f center" id="diffInfo"></div>
+
       <div class="group-h">Songs</div>
       <div class="seg" id="setPool">
         <button data-v="all">Alle<small id="nAll"></small></button>
         <button data-v="intl">International<small id="nIntl"></small></button>
         <button data-v="de">Deutsch<small id="nDe"></small></button>
-      </div>
-
-      <div class="group-h">Schwierigkeit</div>
-      <div class="seg" id="setDiff">
-        <button data-v="easy">Leicht<small>≥ 8 Jahre Abstand</small></button>
-        <button data-v="normal">Normal<small>≥ 3 Jahre Abstand</small></button>
-        <button data-v="hard">Schwer<small>ab 1 Jahr Abstand</small></button>
       </div>
 
       <div class="group-h">Modus</div>
@@ -118,6 +120,11 @@
       </button>
     </div>
     <div class="status" id="status"></div>
+    <div class="vol-game" id="volBox">
+      <button id="volMute" aria-label="Stumm" title="Stumm (M)"><svg class="ic"><use href="#i-vol"/></svg></button>
+      <input type="range" id="vol" min="0" max="100" step="1" aria-label="Lautstärke">
+      <span id="volVal"></span>
+    </div>
     <p class="hint"><kbd>Leertaste</kbd> abspielen/pausieren · <kbd>M</kbd> stumm · Cover antippen spielt den Song</p>
   </section>
 
@@ -212,12 +219,7 @@
         <label class="cell"><span class="grow">Automatisch abspielen<span class="sub">Jeder neue Song startet sofort</span></span><span class="switch"><input type="checkbox" id="setAuto"><span></span></span></label>
         <label class="cell"><span class="grow">Töne &amp; Konfetti<span class="sub">Kurze Töne bei Treffer und Fehler, Konfetti bei neuem Rekord</span></span><span class="switch"><input type="checkbox" id="setSfx"><span></span></span></label>
       </div>
-      <div class="group-h">Lautstärke</div>
-      <div class="group"><div class="cell volume" id="volBox">
-        <button id="volMute" aria-label="Stumm"><svg class="ic"><use href="#i-vol"/></svg></button>
-        <input type="range" id="vol" min="0" max="100" step="1" aria-label="Lautstärke">
-        <span id="volVal" style="min-width:3ch;text-align:right"></span>
-      </div></div>
+      <div class="group-f">Die Lautstärke stellst du direkt im Spiel ein.</div>
     </section>
 
     <section class="page" data-page="design" data-title="Design">
@@ -242,14 +244,14 @@
 <div id="loading" class="loading hidden"><div class="loader"></div><p id="loadingTxt">Lade Songs…</p></div>
 <div id="toast" class="hidden"></div>
 
-<script src="js/lang/en.js?v=2"></script>
-<script src="js/lang/fr.js?v=2"></script>
-<script src="js/lang/es.js?v=2"></script>
-<script src="js/lang/nb.js?v=2"></script>
+<script src="js/lang/en.js?v=3"></script>
+<script src="js/lang/fr.js?v=3"></script>
+<script src="js/lang/es.js?v=3"></script>
+<script src="js/lang/nb.js?v=3"></script>
 <script src="js/profile.js?v=1"></script>
 <script src="js/i18n.js?v=1"></script>
 <script src="js/deezer.js?v=1"></script>
-<script src="js/game.js?v=2"></script>
+<script src="js/game.js?v=3"></script>
 <script src="js/pwa.js?v=1"></script>
 </body>
 </html>

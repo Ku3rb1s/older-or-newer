@@ -10,13 +10,13 @@ Lokal starten: `node server.js` → http://127.0.0.1:8892/
 
 ## Wie es funktioniert
 
-- **Songs:** kuratierte Liste in `data/songs-src.txt` (rund 400 Hits 1956–2025, international und deutsch).
+- **Songs:** kuratierte Liste in `data/songs-src.txt` (über 900 Hits 1954–2025, international und deutsch).
   Das Jahr ist die **erste Veröffentlichung** – Deezer und Spotify nennen oft das Jahr von Best-of-Alben oder Remastern, darum kommt es nicht von dort.
 - **Jahre geprüft mit MusicBrainz:** `scripts/check-years.js` schlägt jedes Jahr nach (gleiche Logik wie „Originaljahr nachschlagen“
   in Musik-Bingo: früheste Album/Single/EP-Veröffentlichung, ohne Compilations, Bootlegs und Live-Mitschnitte) und listet Abweichungen.
   Das passiert beim Bauen, nicht im Spiel – MusicBrainz erlaubt nur etwa eine Anfrage pro Sekunde.
 - **Audio:** 30-s-Vorschauen von Deezer (JSONP, kein Login). Der Vorschau-Link läuft ab, darum wird er erst kurz vorher per `/track/{id}` geholt.
-- **Schwierigkeit:** Mindestabstand der Jahre – Leicht ≥ 8, Normal ≥ 3, Schwer ab 1 Jahr. Gleiche Jahre kommen nie vor.
+- **Schwierigkeit** (`DIFF` in `js/game.js`): Mindestabstand der Jahre, Bekanntheit der Songs (Deezer-Rang) und Bedenkzeit – Leicht (große Hits, ≥ 10 Jahre), Normal (≥ 5), Schwer (alle, ≥ 2), Profi (ab 1 Jahr, 10 s pro Song). Gleiche Jahre kommen nie vor.
 - **Modus:** „Mit Titel“ oder „Nur hören“ (Titel, Interpret und Cover erst nach dem Tipp).
 - Rekorde je Songs/Schwierigkeit/Modus und Statistik nur lokal (`oon.*` im Browser-Speicher). Design (`mq.theme`), Sprache (`mq.lang`) und Profil (`jb.profile`) teilt es mit den anderen Spielen.
 
@@ -24,7 +24,7 @@ Lokal starten: `node server.js` → http://127.0.0.1:8892/
 
 1. `data/songs-src.txt` bearbeiten: `Jahr | Interpret | Titel | Zusätze` (`de` = deutscher Act, `dz=123` = feste Deezer-ID, falls die Suche danebenliegt)
 2. `node scripts/build-songs.js` – sucht die Deezer-IDs und schreibt `data/songs.json`
-3. `node scripts/check-years.js` – prüft die Jahre gegen MusicBrainz (dauert ca. 10 Minuten) und zeigt Abweichungen zum Nachprüfen
+3. `node scripts/check-years.js` – prüft die Jahre gegen MusicBrainz und schreibt Abweichungen nach `data/mb-diffs.txt` (Zwischenstand in `data/mb-years.json`, abbrechen und neu starten geht jederzeit)
 
 ## Sprachen
 
@@ -47,4 +47,4 @@ in `js/game.js` erhöhen, `CHANGELOG.md` ergänzen und `?v=` in `index.html` hoc
 | `js/deezer.js`, `js/i18n.js`, `js/profile.js`, `js/pwa.js` | wie in Needle Drop |
 | `data/songs-src.txt` → `data/songs.json` | Songliste mit geprüften Jahren |
 | `scripts/` | Songliste bauen, Jahre prüfen, Sprachen prüfen |
-| `logo.svg` | Logo (Vorlage für die PNG-Icons) |
+| `logo.svg` | Logo „Zeitreise“ (Vorlage für die PNG-Icons); `scripts/logo-options.js` baut eine Auswahlseite mit Varianten |

@@ -32,7 +32,7 @@ for (const m of code.matchAll(/\btx\(/g)) {
   for (const s of arg.matchAll(/'((?:\\.|[^'\\])*)'/g)) add(unq(s[1]));
 }
 // 3) Tabellen, deren Texte über tx(Variable) laufen: Namen der Songs/Schwierigkeiten/Modi, Modus-Infos, Farbthemen
-for (const tbl of ['POOL_NAMES', 'DIFF_NAMES', 'MODE_NAMES', 'MODE_INFO']) {
+for (const tbl of ['POOL_NAMES', 'DIFF_NAMES', 'DIFF_INFO', 'MODE_NAMES', 'MODE_INFO']) {
   const m = code.match(new RegExp('const ' + tbl + ' = \\{([\\s\\S]*?)\\};'));
   if (m) for (const s of m[1].matchAll(/:\s*'((?:\\.|[^'\\])*)'/g)) add(unq(s[1]));
 }

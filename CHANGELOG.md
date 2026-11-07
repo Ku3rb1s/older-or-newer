@@ -1,5 +1,12 @@
 # Neuerungen
 
+## 1.2.0 – 07.11.2026
+- **Über 900 Songs** statt rund 400 – von 1954 bis 2025, international und deutsch
+- **4 Schwierigkeitsstufen:** Leicht (nur große Hits, ≥ 10 Jahre Abstand), Normal (≥ 5 Jahre), Schwer (alle Songs, ≥ 2 Jahre) und Profi (ab 1 Jahr und nur 10 Sekunden pro Song)
+- **Lautstärke direkt im Spiel** unter den Knöpfen (auf iPhone/iPad nur Stumm – dort regeln die Tasten)
+- Neues Logo **„Zeitreise“** und neue Farben: Türkis für neuer, Gold für älter
+- Rekorde zählen ab jetzt je neuer Schwierigkeitsstufe
+
 ## 1.1.0 – 07.11.2026
 - Neues Logo: Platte mit geteiltem Etikett – Pfeil hoch (neuer) und runter (älter), passend zu den anderen Jukebox-Spielen
 - Größere, übersichtlichere Knöpfe **Älter** und **Neuer** mit dem Jahr zum Vergleich („vor 1993“ / „nach 1993“); nach dem Tipp bleibt der gewählte Knopf markiert

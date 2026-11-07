@@ -14,7 +14,8 @@ header{max-width:640px}
 .cat-sub{font-size:.92rem;color:var(--muted);line-height:1.4;max-width:30em}
 
 /* ---------- Start ---------- */
-.home-title{font-family:Outfit,system-ui,sans-serif;font-weight:900;font-size:clamp(2rem,8vw,3rem);line-height:1.05;letter-spacing:-.02em;
+/* Zeilenhöhe + Polster oben: sonst schneidet der Farbverlauf (background-clip:text) die Pünktchen vom „Ä“ ab */
+.home-title{font-family:Outfit,system-ui,sans-serif;font-weight:900;font-size:clamp(2rem,8vw,3rem);line-height:1.25;padding:.12em .05em 0;letter-spacing:-.02em;
   background:linear-gradient(90deg,var(--oon1),var(--oon2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .demo{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px auto 24px}
 .demo-card{width:min(130px,34vw);aspect-ratio:1;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;

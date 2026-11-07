@@ -1,5 +1,9 @@
 # Neuerungen
 
+## 1.2.1 – 07.11.2026
+- Fehler behoben: Beim Titel „Älter oder neuer?“ waren die Pünktchen vom „Ä“ oben abgeschnitten
+- „Spielen“-Knopf in Türkis passend zum neuen Logo
+
 ## 1.2.0 – 07.11.2026
 - **Über 900 Songs** statt rund 400 – von 1954 bis 2025, international und deutsch
 - **4 Schwierigkeitsstufen:** Leicht (nur große Hits, ≥ 10 Jahre Abstand), Normal (≥ 5 Jahre), Schwer (alle Songs, ≥ 2 Jahre) und Profi (ab 1 Jahr und nur 10 Sekunden pro Song)

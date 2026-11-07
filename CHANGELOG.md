@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.3 – 07.11.2026
+- Spiele-Menü: Logo oben lange gedrückt halten (am Computer Rechtsklick) – zurück zur Jukebox oder direkt in ein anderes Spiel
+
 ## 1.6.2 – 07.11.2026
 - Bestenliste: Machst du mit, landen Rekorde und Serien jetzt direkt nach dem Spielen in der Bestenliste – ohne erst die Jukebox zu öffnen
 

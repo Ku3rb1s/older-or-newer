@@ -159,5 +159,7 @@
     "Tiere": "Animals",
     "Musik": "Music",
     "Sonstiges": "Other",
+    "Zur Jukebox": "To the Jukebox",
+    "<b>Tipp:</b> Logo gedrückt halten – zur Jukebox und zu den anderen Spielen.": "<b>Tip:</b> Press and hold the logo – to the Jukebox and the other games.",
   },
 };

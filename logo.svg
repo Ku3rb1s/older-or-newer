@@ -1,20 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Older or Newer: Platte wie bei Musik-Bingo/Needle Drop, daneben Pfeil hoch (neuer) und runter (älter) -->
+  <!-- Older or Newer: Platte wie bei Musik-Bingo/Needle Drop. Etikett oben/unten geteilt: Pfeil hoch = neuer, Pfeil runter = älter -->
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b1530"/><stop offset="1" stop-color="#0b1a24"/></linearGradient>
-    <linearGradient id="lbl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
-    <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#a78bfa" stop-opacity=".35"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/></radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".55" stop-color="#6366f1"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <linearGradient id="bot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".4"/></filter>
+    <clipPath id="lab"><circle cx="256" cy="256" r="112"/></clipPath>
   </defs>
   <rect width="512" height="512" fill="url(#bg)"/>
-  <circle cx="206" cy="256" r="200" fill="url(#glow)"/>
-  <circle cx="206" cy="256" r="150" fill="#0d0d11"/>
-  <g fill="none" stroke="#24242c" stroke-width="5">
-    <circle cx="206" cy="256" r="128"/><circle cx="206" cy="256" r="110"/><circle cx="206" cy="256" r="92"/><circle cx="206" cy="256" r="74"/>
-  </g>
-  <circle cx="206" cy="256" r="54" fill="url(#lbl)"/>
-  <circle cx="206" cy="256" r="9" fill="#0d0d11"/>
-  <g fill="none" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M404 222V112M362 152l42-42 42 42" stroke="#22d3ee"/>
-    <path d="M404 290v110M362 360l42 42 42-42" stroke="#a78bfa"/>
+  <g transform="translate(256 256) scale(.9) translate(-256 -256)">
+    <g filter="url(#sh)"><circle cx="256" cy="256" r="210" fill="#111114"/></g>
+    <g fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="2">
+      <circle cx="256" cy="256" r="196"/><circle cx="256" cy="256" r="180"/><circle cx="256" cy="256" r="164"/><circle cx="256" cy="256" r="148"/><circle cx="256" cy="256" r="132"/>
+    </g>
+    <path d="M256 256 L108 107 A210 210 0 0 1 170 64 Z" fill="#fff" fill-opacity=".09"/>
+    <path d="M256 256 L404 405 A210 210 0 0 1 342 448 Z" fill="#fff" fill-opacity=".09"/>
+    <g clip-path="url(#lab)">
+      <rect x="144" y="144" width="224" height="112" fill="url(#top)"/>
+      <rect x="144" y="256" width="224" height="112" fill="url(#bot)"/>
+    </g>
+    <rect x="144" y="252" width="224" height="8" fill="#111114"/>
+    <g fill="none" stroke="#0b1020" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M216 222l40-40 40 40"/>
+      <path d="M216 290l40 40 40-40"/>
+    </g>
   </g>
 </svg>

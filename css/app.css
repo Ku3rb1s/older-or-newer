@@ -78,11 +78,27 @@ header{max-width:640px}
 .vs b{font-weight:800}
 .vs .good{color:var(--good)}.vs .wrong{color:var(--bad)}
 
-.answer{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-.ans{font-size:1.15rem;padding:1em .8em;border-radius:18px;color:#06121a;flex-direction:row}
-.ans .ic{width:1.35em;height:1.35em;stroke-width:2.6}
-.ans.older{background:linear-gradient(135deg,#67e8f9,var(--oon1));box-shadow:0 10px 26px -12px var(--oon1)}
-.ans.newer{background:linear-gradient(135deg,#c4b5fd,var(--oon2));box-shadow:0 10px 26px -12px var(--oon2)}
+/* Älter / Neuer: links die Vergangenheit (violett, Pfeil runter), rechts die Zukunft (cyan, Pfeil hoch) – wie im Logo */
+.answer{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.ans{--c:var(--oon2);--c2:#c4b5fd;position:relative;display:flex;align-items:center;justify-content:flex-start;gap:12px;
+  padding:14px 16px;border-radius:20px;text-align:left;white-space:normal;color:var(--text);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--c) 30%,rgba(255,255,255,.04)),color-mix(in srgb,var(--c) 10%,rgba(0,0,0,.25)));
+  border:1px solid color-mix(in srgb,var(--c) 55%,transparent);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 14px 30px -16px var(--c);transition:transform .12s,box-shadow .2s,opacity .25s,filter .2s}
+.ans.newer{--c:var(--oon1);--c2:#a5f3fc}
+.ans-ic{width:48px;height:48px;flex:none;border-radius:50%;display:grid;place-items:center;color:#0b1020;
+  background:linear-gradient(160deg,var(--c2),var(--c));box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 16px -6px var(--c)}
+.ans-ic .ic{width:26px;height:26px;stroke-width:2.8}
+.ans-tx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ans-tx b{font-family:Outfit,system-ui,sans-serif;font-size:1.35rem;font-weight:900;line-height:1;letter-spacing:-.01em}
+.ans-tx small{font-size:.82rem;font-weight:600;color:color-mix(in srgb,var(--c2) 75%,var(--muted))}
+.ans-key{position:absolute;top:9px;right:10px;font:inherit;font-size:.7rem;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:0 .4em;line-height:1.5}
+@media (hover:hover){.ans:not(:disabled):hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 18px 34px -14px var(--c);filter:brightness(1.1)}}
+@media (hover:none){.ans-key{display:none}}
+.ans:active:not(:disabled){transform:scale(.97)}
+/* nach dem Tipp: gewählter Knopf bleibt hervorgehoben, der andere tritt zurück – nichts springt */
+.ans:disabled{cursor:default;opacity:.35;filter:saturate(.6)}
+.ans.picked:disabled{opacity:1;filter:none;box-shadow:0 0 0 2px var(--c) inset,0 14px 30px -14px var(--c)}
 .status{margin-top:14px;min-height:0}
 .status:empty{display:none}
 .hint{color:var(--muted);font-size:.78rem;margin:16px 0 0}

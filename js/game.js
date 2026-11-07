@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.0.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.1.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -166,15 +166,20 @@ function renderMeta() {
   $('#gameBest').textContent = tx('Rekord {n}', { n: Math.max(G.best, G.streak) });
   $('#streakPill').classList.toggle('hot', G.streak > 0 && G.streak >= G.best);
 }
-function setAnswer(on) {
-  $('#answer').classList.toggle('hidden', !on);
-  $('#btnOlder').disabled = $('#btnNewer').disabled = !on;
+// Knöpfe an/aus. Beim Tipp bleibt der gewählte hervorgehoben (picked); „hide“ blendet sie ganz aus (Spielende)
+function setAnswer(on, picked = null, hide = false) {
+  $('#answer').classList.toggle('hidden', hide);
+  for (const b of [$('#btnOlder'), $('#btnNewer')]) { b.disabled = !on; b.classList.toggle('picked', b.dataset.dir === picked); }
+  if (G?.cur) {
+    $('#olderSub').textContent = tx('vor {y}', { y: G.cur.y });
+    $('#newerSub').textContent = tx('nach {y}', { y: G.cur.y });
+  }
 }
 
 async function guess(dir) {
   if (!G || G.locked || G.over) return;
   G.locked = true;
-  setAnswer(false);
+  setAnswer(false, dir);
   const { cur, next } = G;
   const ok = dir === 'newer' ? next.y > cur.y : next.y < cur.y;
   const card = $('#board .song.next');
@@ -193,6 +198,7 @@ async function guess(dir) {
   sound(ok ? 'ok' : 'miss');
   if (!ok) {
     G.over = true; G.miss = { cur, next, dir };
+    setAnswer(false, null, true);
     $('#status').innerHTML = `<button class="big" id="toEnd">${tx('Zum Ergebnis')}</button>`;
     $('#toEnd').onclick = endGame;
     if (navigator.vibrate) navigator.vibrate(120);
@@ -456,7 +462,7 @@ $('#btnResetAll').onclick = () => {
 self.liveLang = () => {
   renderHome();
   if (sheet.open) { renderSettings(); goPage($('#sheetSettings .page.active')?.dataset.page || 'main'); }
-  if (G && !$('#game').classList.contains('hidden')) { renderMeta(); if (!G.locked) renderBoard(); }
+  if (G && !$('#game').classList.contains('hidden')) { renderMeta(); if (!G.locked) { renderBoard(); setAnswer(true); } }
 };
 document.addEventListener('keydown', e => {
   if ($('#game').classList.contains('hidden') || sheet.open || e.target.matches?.('input,select,textarea')) return;

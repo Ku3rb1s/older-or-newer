@@ -154,5 +154,10 @@
     "Wiedergabe & Töne": "Playback & sounds",
     "Zum Ergebnis": "See result",
     "Zur Startseite": "Back to home",
+    "Dein Code": "Your code",
+    "Auf anderen Geräten weiterspielen": "Keep playing on other devices",
+    "Noch nicht gesichert – in der Jukebox sichern": "Not saved yet – save it in the Jukebox",
+    "Code {c} · verwalten in der Jukebox": "Code {c} · manage it in the Jukebox",
+    "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Take records, streaks and profile with you using a code – no email, no password",
   },
 };

@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.5.2 – 07.11.2026
+- Einstellungen: „Auf anderen Geräten weiterspielen“ bzw. „Dein Code“ statt „Auf allen Geräten“ – klarer, und mit Hinweis, wenn der Code noch nicht gesichert ist
+
 ## 1.5.1 – 07.11.2026
 - iPhone/Handy: Die schwebende Knopf-Leiste (Spielen, Nochmal, Teilen) liegt beim Runterscrollen nicht mehr über dem Inhalt; Meldungen erscheinen über der Leiste
 

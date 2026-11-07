@@ -154,5 +154,10 @@
     "Wiedergabe & Töne": "Lecture & sons",
     "Zum Ergebnis": "Voir le résultat",
     "Zur Startseite": "Retour à l'accueil",
+    "Dein Code": "Ton code",
+    "Auf anderen Geräten weiterspielen": "Continuer sur d’autres appareils",
+    "Noch nicht gesichert – in der Jukebox sichern": "Pas encore sauvegardé – sauvegarde-le dans la Jukebox",
+    "Code {c} · verwalten in der Jukebox": "Code {c} · à gérer dans la Jukebox",
+    "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Emporte records, séries et profil avec un code – sans e-mail ni mot de passe",
   },
 };

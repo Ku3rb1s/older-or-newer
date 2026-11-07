@@ -1,0 +1,43 @@
+name: Songlisten aktualisieren
+
+# Jede Woche (Montag kurz nach Mitternacht deutscher Zeit): automatische Songliste (Playlists + Milliarden-Liste,
+# Originaljahr von MusicBrainz), Deezer-IDs, Original-Cover. Hochgeladen wird nur, wenn sich Songdaten geändert haben.
+# Die Jukebox (Skripte) und Gold Record (gemeinsame MusicBrainz-Regeln) werden nur gelesen – geschrieben wird nur hier.
+# Alles läuft über Spiele-Hub/scripts/update-songs.js (lokal genauso aufrufbar).
+# Per Hand: Actions → „Songlisten aktualisieren“ → Run workflow.
+on:
+  schedule:
+    - cron: '10 23 * * 0'   # Sonntag 23:10 UTC = Montag 0:10 (Winter) bzw. 1:10 (Sommer)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-songs
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with: { path: Older-or-Newer }
+      - uses: actions/checkout@v4
+        with: { repository: Ku3rb1s/jukebox, path: Spiele-Hub }
+      - uses: actions/checkout@v4
+        with: { repository: Ku3rb1s/gold-record, path: Gold-Record }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Zwischenspeicher holen
+        uses: actions/cache@v4
+        with:
+          path: Spiele-Hub/scripts/.cache
+          key: oon-songs-${{ github.run_id }}
+          restore-keys: oon-songs-
+      - name: Songlisten bauen und hochladen
+        run: |
+          git -C Older-or-Newer config user.name "github-actions[bot]"
+          git -C Older-or-Newer config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node Spiele-Hub/scripts/update-songs.js --only oon,covers --commit

@@ -114,7 +114,7 @@
 1983 | Eurythmics | Sweet Dreams (Are Made of This)
 1983 | The Police | Every Breath You Take
 1983 | Bonnie Tyler | Total Eclipse of the Heart
-1983 |1983di Lauper | Girls Just Want to Have Fun
+1983 | Cyndi Lauper | Girls Just Want to Have Fun
 1983 | Irene Cara | Flashdance... What a Feeling
 1983 | David Bowie | Let's Dance
 1983 | Culture Club | Karma Chameleon
@@ -195,7 +195,7 @@
 1994 | Wet Wet Wet | Love Is All Around
 1994 | Green Day | Basket Case
 1994 | Mariah Carey | All I Want for Christmas Is You
-1994 |1994oter | Hyper Hyper | de
+1994 | Scooter | Hyper Hyper | de
 1995 | Oasis | Wonderwall
 1995 | Coolio | Gangsta's Paradise
 1995 | Alanis Morissette | You Oughta Know
@@ -258,7 +258,7 @@
 2003 | Wir sind Helden | Guten Tag | de
 2004 | Green Day | Boulevard of Broken Dreams
 2004 | Usher | Yeah!
-2004 |2017oon 5 | This Love
+2002 | Maroon 5 | This Love
 2004 | Franz Ferdinand | Take Me Out
 2004 | Rammstein | Amerika | de
 2004 | Juli | Perfekte Welle | de
@@ -283,7 +283,7 @@
 2008 | Katy Perry | I Kissed a Girl
 2008 | Kings of Leon | Use Somebody
 2008 | Duffy | Mercy
-2008 |2008y Gaga | Just Dance
+2008 | Lady Gaga | Just Dance
 2008 | Lady Gaga | Poker Face
 2008 | Beyoncé | Single Ladies (Put a Ring on It)
 2008 | Peter Fox | Haus am See | de
@@ -297,7 +297,7 @@
 2009 | Owl City | Fireflies
 
 # ---------- 2010er ----------
-2010 |2010no Mars | Just the Way You Are
+2010 | Bruno Mars | Just the Way You Are
 2010 | Katy Perry | California Gurls
 2010 | Shakira | Waka Waka (This Time for Africa)
 2010 | Eminem | Love the Way You Lie

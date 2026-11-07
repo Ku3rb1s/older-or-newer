@@ -1,5 +1,9 @@
 # Neuerungen
 
+## 1.6.10 – 07.11.2026
+- - 5 Songs mit fehlerhaftem Interpreten repariert (Cyndi Lauper, Scooter, Maroon 5, Lady Gaga, Bruno Mars)
+- - Neue Songs werden jetzt jede Woche automatisch ergänzt
+
 ## 1.6.9 – 07.11.2026
 - Zwei Songs kamen doppelt vor („Waka Waka“ auf Spanisch und Englisch, „This Girl“ in zwei Fassungen) – entfernt; die automatische Songliste erkennt solche Dopplungen jetzt
 

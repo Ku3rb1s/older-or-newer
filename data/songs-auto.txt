@@ -200,7 +200,6 @@
 2008 | Flo Rida | Low | auto dz=717358
 2008 | Katy Perry | Hot N Cold | auto dz=3160142
 2008 | Kings Of Leon | Sex on Fire | auto dz=15531170
-2008 | Lady Gaga | Just Dance | auto dz=924618
 2008 | Lil Wayne | A Milli | auto dz=2124739
 2008 | Lil Wayne | Mr. Carter | auto dz=2124754
 2008 | Ne-Yo | Miss Independent | auto dz=2124371
@@ -235,7 +234,6 @@
 2010 | Alter Bridge | I Know It Hurts | auto dz=14062787
 2010 | Andreas Gabalier | I sing a Liad für di | auto dz=6816695 de
 2010 | B.o.B | Airplanes | auto dz=5979887
-2010 | Bruno Mars | Just the Way You Are | auto dz=3567616781
 2010 | Bruno Mars | Talking to the Moon | auto dz=8011855
 2010 | CeeLo Green | Fuck You | auto dz=7303269
 2010 | CeeLo Green | Forget You | auto dz=7303270
@@ -921,6 +919,7 @@
 2021 | Lil Nas X | THATS WHAT I WANT | auto dz=1493915892
 2021 | Lil Tjay | Calling My Phone | auto dz=1237802692
 2021 | LISA | MONEY | auto dz=1490386732
+2021 | Loredana | Rosenkrieg | auto dz=1753974707 de
 2021 | Lost Frequencies | Where Are You Now | auto dz=1432930542
 2021 | Maite Kelly | Einfach Hello | auto dz=1194048222 de
 2021 | Måneskin | I WANNA BE YOUR SLAVE | auto dz=1279728532
@@ -1221,8 +1220,8 @@
 2026 | Bebe Rexha | New Religion | auto dz=3850680281
 2026 | Beyoncé | MORNING DEW (DONK) | auto dz=4131547751
 2026 | Bruno Mars | I Just Might | auto dz=3763842212
-2026 | Bruno Mars | Risk It All | auto dz=3867905081
 2026 | Bruno Mars | On My Soul | auto dz=3867905131
+2026 | Bruno Mars | Risk It All | auto dz=3867905081
 2026 | BTS | SWIM | auto dz=3907717261
 2026 | Cave | CASA CUBA | auto dz=4001997401 de
 2026 | Cody Johnson | Take Me Back (Leave Me There) | auto dz=3954011381
@@ -1267,6 +1266,7 @@
 2026 | Mitchell Tenpenny | Ain't My Problem | auto dz=4256829341
 2026 | Morgan Wallen | Been By Now | auto dz=4167204822
 2026 | Mucco | Benzin | auto dz=3916494171 de
+2026 | Olivia Rodrigo | take me home (4 christmas) | auto dz=4389891511
 2026 | Olivia Rodrigo | stupid song | auto dz=4078104881
 2026 | Olivia Rodrigo | expectations | auto dz=4348981142
 2026 | Olivia Rodrigo | the cure | auto dz=4078104981

@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.3.1', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.4.0', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -351,7 +351,7 @@ function recordStats(g) {
   LS.set('stats', st);
 }
 function renderStats() {
-  const st = LS.get('stats', null);
+  const st = Sync.view('oon.stats', LS.get('stats', null)); // alle verbundenen Geräte zusammen
   if (!st?.games) { $('#statsBox').innerHTML = `<div class="group-f" style="margin-top:14px">${tx('Noch keine Spiele')}</div>`; return; }
   const rows = [
     [tx('Spiele'), fmtN(st.games)],
@@ -430,7 +430,7 @@ function renderSettings() {
   $('#subHelp').textContent = [opt.auto ? 'Autoplay an' : 'Autoplay aus', opt.sfx ? '' : 'Töne aus'].filter(Boolean).map(s => tx(s)).join(' · ');
   $('#subDesign').textContent = tx((THEMES.find(x => x[0] === opt.theme) || THEMES[0])[1]);
   $('#langSel').innerHTML = langOptions();
-  const st = LS.get('stats', null);
+  const st = Sync.view('oon.stats', LS.get('stats', null)); // alle verbundenen Geräte zusammen
   $('#subStats').textContent = st?.games ? tx(st.games === 1 ? '{n} Spiel' : '{n} Spiele', { n: st.games }) + ' · ' + tx('Längste Serie {n}', { n: st.best }) : tx('Noch keine Spiele');
   $('#appVersion').innerHTML = `Older or Newer · ${tx('Version')} ${APP_VERSION} · ${APP_DATE}<span>${tx('Neuerungen ansehen')} ›</span>`;
   applyTheme(); applyVol();
@@ -519,6 +519,7 @@ $('#langSel').onchange = e => setLang(e.target.value);
 $('#btnResetAll').onclick = () => {
   if (!confirm(tx('Alles löschen, was Older or Newer auf diesem Gerät gespeichert hat?'))) return;
   try { Object.keys(localStorage).filter(k => k.startsWith('oon.')).forEach(k => localStorage.removeItem(k)); } catch {}
+  Sync.leave(); // vom persönlichen Code trennen, sonst käme beim nächsten Abgleich alles zurück
   location.reload();
 };
 self.liveLang = () => {
@@ -537,3 +538,6 @@ document.addEventListener('keydown', e => {
 /* ---------- Start ---------- */
 applyTheme(); applyVol(); renderHome();
 loadSongs().then(renderHome).catch(() => {});
+
+// Neue Spielstände von anderen Geräten (js/sync.js, Code in der Jukebox): Startseite und offene Einstellungen neu zeichnen
+addEventListener('jukebox-sync', () => { if (!G) renderHome(); if (document.querySelector('dialog[open]')) renderSettings(); });

@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.4.0 – 07.11.2026
+- Neu: **Auf allen Geräten spielen** – mit einem persönlichen Code aus der Jukebox werden Rekorde, Statistik, Tages-Challenge und Profil zwischen Handy, Tablet und PC abgeglichen. Ohne Konto, verschlüsselt mit deinem Code
+
 ## 1.3.1 – 07.11.2026
 - Titel „Älter oder neuer?“ schlicht in Weiß statt mit Farbverlauf
 - Jukebox zeigt neue Logos sofort (Icon-Adresse mit Versionsnummer)

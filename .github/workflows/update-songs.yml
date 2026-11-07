@@ -1,13 +1,13 @@
 name: Songlisten aktualisieren
 
-# Jede Woche (Montag kurz nach Mitternacht deutscher Zeit): automatische Songliste (Playlists + Milliarden-Liste,
+# Jede Woche (Montag 0:05 deutscher Zeit): automatische Songliste (Playlists + Milliarden-Liste,
 # Originaljahr von MusicBrainz), Deezer-IDs, Original-Cover. Hochgeladen wird nur, wenn sich Songdaten geändert haben.
 # Die Jukebox (Skripte) und Gold Record (gemeinsame MusicBrainz-Regeln) werden nur gelesen – geschrieben wird nur hier.
 # Alles läuft über Spiele-Hub/scripts/update-songs.js (lokal genauso aufrufbar).
 # Per Hand: Actions → „Songlisten aktualisieren“ → Run workflow.
 on:
   schedule:
-    - cron: '10 23 * * 0'   # Sonntag 23:10 UTC = Montag 0:10 (Winter) bzw. 1:10 (Sommer)
+    - cron: '5 23 * * 0'   # Sonntag 23:05 UTC = Montag 0:05 (Winter) bzw. 1:05 (Sommer) – kurz nach dem Wechsel der Tageschallenge
   workflow_dispatch:
 
 permissions:

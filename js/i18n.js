@@ -1,21 +1,25 @@
-// Needle Drop – Sprachen (gleiches System wie Musik-Bingo)
+// Sprachen – gemeinsame Datei aller Jukebox-Spiele (Original: Spiele-Hub/shared/js/i18n.js, verteilt mit scripts/share.js)
 // Alle Texte stehen im Code auf Deutsch. tx('Text') liefert die Übersetzung der gewählten Sprache (fehlt sie, bleibt es deutsch).
 // Platzhalter: tx('Song {a} / {b}', { a: 1, b: 10 }). Feste Texte in index.html übersetzt translatePage() beim Laden.
+//
+// Alle Spiele liegen unter ku3rb1s.github.io und teilen sich den Browser-Speicher. Die Sprache gilt darum für alle:
+// gespeichert wird sie unter mq.lang (Needle Drop und die neueren Spiele), hub.lang (Jukebox) und mb_lang (Musik-Bingo).
 //
 // Neue Sprache hinzufügen:
 //   1. js/lang/en.js kopieren, z. B. nach js/lang/it.js, oben Kürzel, Name und Flagge ändern, die rechten Texte übersetzen
 //   2. in index.html vor js/i18n.js eintragen: <script src="js/lang/it.js?v=…"></script>
-//   3. prüfen, ob etwas fehlt: node scripts/check-lang.js
-// Neue Texte im Code: mit tx('Deutscher Text') schreiben und in jeder Sprachdatei ergänzen (check-lang.js zeigt, wo).
+//   3. prüfen, ob etwas fehlt (falls das Spiel es hat): node scripts/check-lang.js
+// Neue Texte im Code: mit tx('Deutscher Text') schreiben und in jeder Sprachdatei ergänzen.
 'use strict';
 
 // Sprachdateien (js/lang/*.js) tragen sich hier ein: LANG_PACKS.en = { name, flag, dict }
 const LANG_PACKS = self.LANG_PACKS || {};
 const LANGS = { de: { name: 'Deutsch', flag: '🇩🇪' }, ...Object.fromEntries(Object.entries(LANG_PACKS).map(([k, p]) => [k, { name: p.name, flag: p.flag }])) };
+const LANG_KEYS = ['mq.lang', 'hub.lang', 'mb_lang'];
 
-// Gewählte Sprache, sonst die des Geräts (falls vorhanden), sonst Englisch
+// Gewählte Sprache (aus irgendeinem Spiel), sonst die des Geräts, sonst Englisch
 let LANG = (() => {
-  try { const v = JSON.parse(localStorage.getItem('mq.lang')); if (LANGS[v]) return v; } catch {}
+  for (const k of LANG_KEYS) { try { const v = JSON.parse(localStorage.getItem(k)); if (LANGS[v]) return v; } catch {} }
   // Norwegisch: Geräte melden „nb“, „no“ oder „nn“ – alle bekommen die Bokmål-Übersetzung
   for (const l of navigator.languages || [navigator.language || '']) { let k = String(l).slice(0, 2).toLowerCase(); if (k === 'no' || k === 'nn') k = 'nb'; if (LANGS[k]) return k; }
   return LANGS.en ? 'en' : 'de';
@@ -23,10 +27,10 @@ let LANG = (() => {
 let curLang = LANG;
 document.documentElement.lang = LANG;
 
-// Sprache wechseln – ohne Neuladen: self.liveLang (quiz.js) zeichnet alles neu
+// Sprache wechseln (für alle Spiele) – ohne Neuladen, wenn das Spiel self.liveLang anbietet (zeichnet alles neu)
 function setLang(l) {
   if (!LANGS[l]) return;
-  try { localStorage.setItem('mq.lang', JSON.stringify(l)); } catch {}
+  for (const k of LANG_KEYS) try { localStorage.setItem(k, JSON.stringify(l)); } catch {}
   LANG = curLang = l;
   document.documentElement.lang = l;
   translatePage();

@@ -165,5 +165,7 @@
     "Abgeglichen · verwalten in der Jukebox": "Sincronizado · gestiónalo en la Jukebox",
     "Abbrechen": "Cancelar",
     "Löschen": "Borrar",
+    // Adventskalender
+    "Aus dem Adventskalender": "Del calendario de Adviento",
   },
 };

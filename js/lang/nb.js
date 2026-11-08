@@ -165,5 +165,7 @@
     "Abgeglichen · verwalten in der Jukebox": "Synkronisert · administreres i Jukebox",
     "Abbrechen": "Avbryt",
     "Löschen": "Slett",
+    // Adventskalender
+    "Aus dem Adventskalender": "Fra julekalenderen",
   },
 };

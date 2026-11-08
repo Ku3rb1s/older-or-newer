@@ -165,5 +165,7 @@
     "Abgeglichen · verwalten in der Jukebox": "Synchronisé · à gérer dans la Jukebox",
     "Abbrechen": "Annuler",
     "Löschen": "Supprimer",
+    // Adventskalender
+    "Aus dem Adventskalender": "Du calendrier de l’Avent",
   },
 };

@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.23 – 08.11.2026
+- Exklusive Avatare aus dem Adventskalender der Jukebox (ab 1. Dezember, hinter Türchen 6, 12, 18 und 24) erscheinen nach dem Freischalten in der Avatar-Auswahl unter „Aus dem Adventskalender“ und werden auf allen Geräten abgeglichen
+
 ## 1.6.22 – 08.11.2026
 - Neue Avatare: über 100 weitere Emojis – mehr Tiere, Winter & Weihnachten, Essen & Trinken und mehr
 

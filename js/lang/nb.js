@@ -155,6 +155,8 @@
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Ta med rekorder, rekker og profil med en kode – uten e-post og passord",
     "Avatar wählen": "Velg avatar",
     "Tiere": "Dyr",
+    "Winter & Weihnachten": "Vinter og jul",
+    "Essen & Trinken": "Mat og drikke",
     "Musik": "Musikk",
     "Sonstiges": "Annet",
     "Zur Jukebox": "Til Jukebox",

@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.22 – 08.11.2026
+- Neue Avatare: über 100 weitere Emojis – mehr Tiere, Winter & Weihnachten, Essen & Trinken und mehr
+
 ## 1.6.21 – 08.11.2026
 - Rückfragen (Spiel beenden, Alles löschen) jetzt im Stil des Spiels statt als Browser-Fenster
 - Behoben: Wer während der Auflösung zur Startseite ging, löste im Hintergrund einen Fehler aus

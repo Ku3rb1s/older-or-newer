@@ -155,6 +155,8 @@
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Take records, streaks and profile with you using a code – no email, no password",
     "Avatar wählen": "Choose avatar",
     "Tiere": "Animals",
+    "Winter & Weihnachten": "Winter & Christmas",
+    "Essen & Trinken": "Food & Drink",
     "Musik": "Music",
     "Sonstiges": "Other",
     "Zur Jukebox": "To the Jukebox",

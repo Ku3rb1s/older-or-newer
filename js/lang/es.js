@@ -155,6 +155,8 @@
     "Rekorde, Serien und Profil mit einem Code mitnehmen – ohne E-Mail und Passwort": "Llévate récords, rachas y perfil con un código, sin correo ni contraseña",
     "Avatar wählen": "Elegir avatar",
     "Tiere": "Animales",
+    "Winter & Weihnachten": "Invierno y Navidad",
+    "Essen & Trinken": "Comida y bebida",
     "Musik": "Música",
     "Sonstiges": "Otros",
     "Zur Jukebox": "A la Jukebox",

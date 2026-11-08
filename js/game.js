@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.6.20', APP_DATE = '08.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.6.21', APP_DATE = '08.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -289,6 +289,7 @@ async function guess(dir) {
     if (cover(next)) card.querySelector('.cv').insertAdjacentHTML('afterbegin', `<img src="${cover(next)}" alt="">`);
   }
   await countYear(card.querySelector('.yr'), cur.y, next.y);
+  if (!G || G.next !== next) return;   // inzwischen beendet (Zurück zur Startseite)
   card.classList.add(ok ? 'ok' : 'bad');
   $('#board .vs').innerHTML = ok
     ? `<b class="good">${tx('Richtig!')}</b> ${next.y > cur.y ? tx('{d} Jahre neuer', { d: next.y - cur.y }) : tx('{d} Jahre älter', { d: cur.y - next.y })}`
@@ -317,6 +318,7 @@ async function guess(dir) {
   b.classList.add('shift');
   await sleep(320);
   b.classList.remove('shift');
+  if (!G || G.over) return;
   G.cur = next; G.next = nn;
   renderBoard(true);
   G.locked = false;
@@ -578,9 +580,25 @@ $('#board').addEventListener('click', e => {
   if (s) toggle(s);
 });
 $('#shareBtn').onclick = shareResult;
+/* Rückfrage im Stil des Spiels statt confirm() – liefert true (Bestätigen) oder false (Abbrechen, Esc, daneben tippen) */
+function ask(text, okLabel, danger = false) {
+  const d = $('#askDlg');
+  $('#askText').textContent = text;
+  $('#askOk').textContent = okLabel;
+  $('#askOk').classList.toggle('danger', danger);
+  return new Promise(res => {
+    const done = v => { d.onclose = null; if (d.open) d.close(); res(v); };
+    $('#askOk').onclick = () => done(true);
+    $('#askNo').onclick = () => done(false);
+    d.onclick = e => { if (e.target === d) done(false); };
+    d.onclose = () => res(false);
+    d.showModal();
+    $('#askOk').focus();
+  });
+}
 const goHome = () => { stop(); stopTimer(); G = null; renderHome(); show('home'); };
-function leave() {
-  if (G && !G.over && G.streak > 0 && !$('#game').classList.contains('hidden') && !confirm(tx('Spiel beenden? Deine Serie geht verloren.'))) return;
+async function leave() {
+  if (G && !G.over && G.streak > 0 && !$('#game').classList.contains('hidden') && !(await ask(tx('Spiel beenden? Deine Serie geht verloren.'), tx('Beenden'), true))) return;
   goHome();
 }
 $('#homeBtn').onclick = goHome;
@@ -605,8 +623,8 @@ $('#themeRow').onclick = e => {
   opt.theme = b.dataset.themePick; sharedTheme.set(opt.theme); renderSettings();
 };
 $('#langSel').onchange = e => setLang(e.target.value);
-$('#btnResetAll').onclick = () => {
-  if (!confirm(tx('Alles löschen, was Older or Newer auf diesem Gerät gespeichert hat?'))) return;
+$('#btnResetAll').onclick = async () => {
+  if (!(await ask(tx('Alles löschen, was Older or Newer auf diesem Gerät gespeichert hat?'), tx('Löschen'), true))) return;
   try { Object.keys(localStorage).filter(k => k.startsWith('oon.')).forEach(k => localStorage.removeItem(k)); } catch {}
   Sync.leave(); // vom persönlichen Code trennen, sonst käme beim nächsten Abgleich alles zurück
   location.reload();

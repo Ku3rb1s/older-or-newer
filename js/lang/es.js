@@ -161,5 +161,7 @@
     "<b>Tipp:</b> Logo gedrückt halten – zur Jukebox und zu den anderen Spielen.": "<b>Consejo:</b> mantén pulsado el logo para ir a la Jukebox y a los demás juegos.",
     "Dein Profil gilt für alle Spiele der Jukebox.": "Tu perfil vale para todos los juegos de la Jukebox.",
     "Abgeglichen · verwalten in der Jukebox": "Sincronizado · gestiónalo en la Jukebox",
+    "Abbrechen": "Cancelar",
+    "Löschen": "Borrar",
   },
 };

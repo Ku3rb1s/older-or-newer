@@ -1,5 +1,9 @@
 # Neuerungen
 
+## 1.6.21 – 08.11.2026
+- Rückfragen (Spiel beenden, Alles löschen) jetzt im Stil des Spiels statt als Browser-Fenster
+- Behoben: Wer während der Auflösung zur Startseite ging, löste im Hintergrund einen Fehler aus
+
 ## 1.6.20 – 08.11.2026
 - Fenster: Ein Doppeltipp auf „Fertig“ tippt nicht mehr versehentlich, was darunter liegt
 

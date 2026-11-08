@@ -161,5 +161,7 @@
     "<b>Tipp:</b> Logo gedrückt halten – zur Jukebox und zu den anderen Spielen.": "<b>Tip:</b> Press and hold the logo – to the Jukebox and the other games.",
     "Dein Profil gilt für alle Spiele der Jukebox.": "Your profile applies to all Jukebox games.",
     "Abgeglichen · verwalten in der Jukebox": "Synced · manage it in the Jukebox",
+    "Abbrechen": "Cancel",
+    "Löschen": "Delete",
   },
 };

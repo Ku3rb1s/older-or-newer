@@ -1,5 +1,9 @@
 # Neuerungen
 
+## 1.6.15 – 07.11.2026
+- Endbildschirm: Ergebnis, Details und Knöpfe erscheinen kurz nacheinander
+- Songliste aktualisiert: 8 fehlende Hits wieder spielbar (andere Fassung bei Deezer), neue Hits aus den Playlists
+
 ## 1.6.14 – 07.11.2026
 - Unnötige Anzeige „Musik-Quiz“ auf der Startseite entfernt
 

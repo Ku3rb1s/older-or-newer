@@ -88,7 +88,7 @@ header{max-width:640px}
 .vs .good{color:var(--good)}.vs .wrong{color:var(--text)}
 
 /* Älter / Neuer: links die Vergangenheit (gold), rechts die Zukunft (türkis) – wie im Logo */
-.answer{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.answer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
 .ans{--c:var(--oon2);--c2:var(--alt2);position:relative;display:flex;align-items:center;justify-content:flex-start;gap:12px;
   padding:14px 16px;border-radius:20px;text-align:left;white-space:normal;color:var(--text);
   background:linear-gradient(160deg,color-mix(in srgb,var(--c) 30%,rgba(255,255,255,.04)),color-mix(in srgb,var(--c) 10%,rgba(0,0,0,.25)));
@@ -186,3 +186,5 @@ html.ios .vol-game input,html.ios .vol-game #volVal{display:none}
 
 /* Links, die wie Einstellungs-Zeilen aussehen (z. B. „Alle Spiele“): nicht unterstreichen – wie in Needle Drop */
 a.cell{color:inherit;text-decoration:none}
+/* Schmale Handys (iPhone SE): Antwort-Knöpfe kompakter, damit „Neuer“ nicht aus dem Bild läuft */
+@media (max-width:360px){.answer{gap:8px}.ans{gap:8px;padding:12px 10px;min-width:0}.ans-ic{width:38px;height:38px}.ans-ic .ic{width:21px;height:21px}.ans-tx b{font-size:1.15rem}.ans-tx small{font-size:.76rem}}

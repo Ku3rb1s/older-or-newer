@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.13 – 07.11.2026
+- Kleine iPhones (z. B. SE): Knopf „Neuer“ läuft nicht mehr aus dem Bild, Auswahlknöpfe mit langen Wörtern passen
+
 ## 1.6.12 – 07.11.2026
 - Punkte am Rundenende zählen kurz hoch
 

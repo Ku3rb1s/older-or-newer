@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.14 – 07.11.2026
+- Unnötige Anzeige „Musik-Quiz“ auf der Startseite entfernt
+
 ## 1.6.13 – 07.11.2026
 - Kleine iPhones (z. B. SE): Knopf „Neuer“ läuft nicht mehr aus dem Bild, Auswahlknöpfe mit langen Wörtern passen
 

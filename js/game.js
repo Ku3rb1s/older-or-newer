@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.6.11', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.6.12', APP_DATE = '07.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -346,7 +346,7 @@ function endGame() {
   if (isBest) LS.set(bestKey(), G.streak);
   recordStats(G);
   $('#endMode').textContent = modeLabel();
-  $('#endScore').textContent = fmtN(G.streak);
+  window.countUp ? countUp($('#endScore'), G.streak, fmtN) : $('#endScore').textContent = fmtN(G.streak);
   $('#endSub').textContent = G.allDone ? '🎉 ' + tx('Alle Songs geschafft!')
     : isBest ? '🏆 ' + tx('Neuer Rekord!') : best ? tx('Rekord {n}', { n: best }) : '';
   $('#endBest').textContent = tx('Rekord {n}', { n: Math.max(best, G.streak) });

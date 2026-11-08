@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.12 – 07.11.2026
+- Punkte am Rundenende zählen kurz hoch
+
 ## 1.6.11 – 07.11.2026
 - Fenster wie auf dem iPhone: am Kopf (oder oben im Inhalt) nach unten wegwischen; beim Schließen gleiten sie nach unten weg
 - Knöpfe reagieren schneller beim Drücken, Hover-Effekte nur noch mit Maus

@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.16 – 08.11.2026
+- Spiele-Menü (Logo lange drücken): neues Spiel On Tour – eine Reise durch die Musikgeschichte
+
 ## 1.6.15 – 07.11.2026
 - Endbildschirm: Ergebnis, Details und Knöpfe erscheinen kurz nacheinander
 - Songliste aktualisiert: 8 fehlende Hits wieder spielbar (andere Fassung bei Deezer), neue Hits aus den Playlists

@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.17 – 08.11.2026
+- Abgleich: On-Tour-Sterne zählen jetzt in der Jukebox-Bestenliste
+
 ## 1.6.16 – 08.11.2026
 - Spiele-Menü (Logo lange drücken): neues Spiel On Tour – eine Reise durch die Musikgeschichte
 

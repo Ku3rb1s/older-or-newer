@@ -43,9 +43,9 @@ async function deezer(q) {
     if (s.dz) {   // feste Deezer-ID aus der Liste
       const t = await (await fetch('https://api.deezer.com/track/' + s.dz)).json();
       if (t.id && t.readable && t.preview) out.push({ id: t.id, t: s.t, a: s.a, y: s.y, ...(s.de ? { de: 1 } : {}), ...(s.auto ? { m: 1 } : {}), c: t.md5_image || '', r: t.rank });
-      else missing.push(`${s.y} | ${s.a} | ${s.t}  (dz=${s.dz} nicht abspielbar)`);
       await sleep(120);
-      continue;
+      if (t.id && t.readable && t.preview) continue;
+      // feste ID nicht (mehr) abspielbar → normal nach einer abspielbaren Fassung suchen (gleicher Titel und Interpret)
     }
     let res = await deezer(`artist:"${s.a}" track:"${s.t.replace(/\s*[([].*$/, '')}"`);
     let hit = res.filter(t => t.readable && t.preview && okVersion(t) && titleOk(t) && artistOk(t)).sort((a, b) => b.rank - a.rank)[0];
@@ -53,8 +53,13 @@ async function deezer(q) {
       res = await deezer(`${s.a} ${s.t.replace(/\s*[([].*$/, '')}`);
       hit = res.filter(t => t.readable && t.preview && okVersion(t) && titleOk(t) && artistOk(t)).sort((a, b) => b.rank - a.rank)[0];
     }
-    if (hit) out.push({ id: hit.id, t: s.t, a: s.a, y: s.y, ...(s.de ? { de: 1 } : {}), c: hit.md5_image || '', r: hit.rank });
-    else missing.push(`${s.y} | ${s.a} | ${s.t}`);
+    if (!hit) {   // leere Antwort kann ein Deezer-Limit sein: kurz warten, ein zweites Mal
+      await sleep(1500);
+      res = await deezer(`${s.a} ${s.t.replace(/s*[([].*$/, '')}`);
+      hit = res.filter(t => t.readable && t.preview && okVersion(t) && titleOk(t) && artistOk(t)).sort((a, b) => b.rank - a.rank)[0];
+    }
+    if (hit) out.push({ id: hit.id, t: s.t, a: s.a, y: s.y, ...(s.de ? { de: 1 } : {}), ...(s.auto ? { m: 1 } : {}), c: hit.md5_image || '', r: hit.rank });
+    else missing.push(`${s.y} | ${s.a} | ${s.t}${s.dz ? ` (dz=${s.dz} nicht abspielbar, keine andere Fassung)` : ''}`);
     if (i % 50 === 0) console.log(i, '/', src.length);
     await sleep(120);
   }

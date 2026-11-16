@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.25 – 16.11.2026
+- Bestenliste: Rekorde aus Needle Drop werden jetzt auch von hier aus gemeldet (gemeinsame sync.js)
+
 ## 1.6.24 – 09.11.2026
 - Neues Spiel in der Jukebox: Piano Rain (Klavier lernen mit fallenden Noten) – im Spiele-Menü (Logo lange drücken) und im Abgleich
 

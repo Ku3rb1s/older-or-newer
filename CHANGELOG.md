@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.26 – 22.11.2026
+- Songliste aktualisiert: 44 neue Songs (u. a. Eminem – Rap God, Silbermond – Irgendwas bleibt, aktuelle Hits 2025/26)
+
 ## 1.6.25 – 16.11.2026
 - Bestenliste: Rekorde aus Needle Drop werden jetzt auch von hier aus gemeldet (gemeinsame sync.js)
 

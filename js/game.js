@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.6.27', APP_DATE = '24.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.6.28', APP_DATE = '24.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -33,9 +33,9 @@ const THEMES = [['graphit', 'Graphit', '#3a4252', '#1f3a32'], ['ozean', 'Ozean',
   ['abend', 'Abend', '#7a2e1c', '#7d1f4a'], ['lila', 'Lila', '#4a22a0', '#8a1458'], ['oled', 'OLED', '#000', '#000']];
 const LOC = () => ({ de: 'de-DE', en: 'en-GB', fr: 'fr-FR', es: 'es-ES', nb: 'nb-NO' }[curLang] || 'de-DE');
 const fmtN = n => Math.round(n).toLocaleString(LOC());
-const SITE = 'https://ku3rb1s.github.io/older-or-newer/';
+const SITE = 'https://jukeboxquiz.de/older-or-newer/';
 
-// Gespeichert wird mit „oon.“ vorne – alle Spiele teilen sich den Browser-Speicher von ku3rb1s.github.io
+// Gespeichert wird mit „oon.“ vorne – alle Spiele teilen sich den Browser-Speicher von jukeboxquiz.de
 const LS = {
   get(k, d) { try { const v = localStorage.getItem('oon.' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
   set(k, v) { try { localStorage.setItem('oon.' + k, JSON.stringify(v)); } catch {} },
@@ -407,7 +407,7 @@ async function shareImage() {
   x.fillStyle = 'rgba(255,255,255,.06)'; x.beginPath(); x.roundRect(120, 1080, W - 240, 150, 40); x.fill();
   x.strokeStyle = 'rgba(134,239,172,.55)'; x.lineWidth = 3; x.stroke();
   center(tx('Schaffst du mehr?'), 1145, Fo(800, 46), '#86efac');
-  center('ku3rb1s.github.io/older-or-newer', 1198, Fo(600, 34), '#b4b8c4');
+  center('jukeboxquiz.de/older-or-newer', 1198, Fo(600, 34), '#b4b8c4');
   return new Promise(r => cv.toBlob(r, 'image/jpeg', .9));
 }
 async function shareResult() {

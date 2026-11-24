@@ -20,7 +20,7 @@ const PLAYLISTS = [
   [14429104921], [11600724204], [6237312204], [11340708804], [789123393], [1111143121], [3155776842], // EDM, Latin, aktuell
   [10578289242, 'de'], [146820791, 'de'], [11242422704, 'de'], [8699026122, 'de'], [7947319822, 'de'], [12244014291, 'de'], [6758361584, 'de'], // Deutsch
 ];
-const BILLIONS = 'https://ku3rb1s.github.io/needle-drop/data/billions.json';
+const BILLIONS = 'https://jukeboxquiz.de/needle-drop/data/billions.json';
 // Versionen, die wir nicht wollen
 const BAD = /\b(live|remix|karaoke|instrumental|acoustic|cover|sped up|slowed|re-?recorded|demo|tribute|made famous|medley|mashup|version 20\d\d|taylor's version)\b/i;
 // Deutschsprachige Acts aus den internationalen Listen erkennen wir nicht automatisch – nur über die Playlist

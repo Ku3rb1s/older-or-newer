@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.28 – 24.11.2026
+- Läuft jetzt unter der eigenen Adresse jukeboxquiz.de (alte Links leiten automatisch weiter)
+
 ## 1.6.27 – 24.11.2026
 - Vorbereitung für die eigene Adresse jukeboxquiz.de: Beim Umzug nimmt das Spiel Profil, Rekorde und Einstellungen von der alten Adresse automatisch mit
 

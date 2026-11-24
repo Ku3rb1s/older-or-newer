@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.27 – 24.11.2026
+- Vorbereitung für die eigene Adresse jukeboxquiz.de: Beim Umzug nimmt das Spiel Profil, Rekorde und Einstellungen von der alten Adresse automatisch mit
+
 ## 1.6.26 – 22.11.2026
 - Songliste aktualisiert: 44 neue Songs (u. a. Eminem – Rap God, Silbermond – Irgendwas bleibt, aktuelle Hits 2025/26)
 

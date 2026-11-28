@@ -85,7 +85,6 @@
     "Jeder neue Song startet sofort": "Every new song starts right away",
     "Jedes Jahr ist das der ersten Veröffentlichung, abgeglichen mit MusicBrainz – nicht das Jahr von Best-of-Alben oder Remastern.": "Every year is the original release year, checked against MusicBrainz – not the year of a best-of album or remaster.",
     "Keine Vorschau": "No preview",
-    "Kurze Töne bei Treffer und Fehler, Konfetti bei neuem Rekord": "Short sounds for hits and misses, confetti for a new record",
     "Lade Songs…": "Loading songs…",
     "Längste Serie": "Longest streak",
     "Längste Serie {n}": "Longest streak {n}",
@@ -137,7 +136,6 @@
     "Tippe auf „Teilen“": "Tap “Share”",
     "Tippe auf das Cover, um abzuspielen": "Tap the cover to play",
     "Titel erst nach dem Tipp": "title after your guess",
-    "Töne & Konfetti": "Sounds & confetti",
     "Töne aus": "Sounds off",
     "unbekannt": "unknown",
     "Version": "Version",
@@ -167,5 +165,7 @@
     "Löschen": "Delete",
     // Adventskalender
     "Aus dem Adventskalender": "From the Advent calendar",
+    // Töne und Vibration (Jukebox)
+    "Töne und Vibration stellst du in der Jukebox ein.": "You set sounds and vibration in the Jukebox.",
   },
 };

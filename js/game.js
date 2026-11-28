@@ -1,7 +1,7 @@
 /* Older or Newer – Spielablauf und Anzeige
    Prinzip wie „Higher or Lower“: Oben steht ein Song mit Jahr, unten läuft ein neuer Song. Älter oder neuer?
    Richtig → der neue Song rückt nach oben, die Serie wächst. Ein Fehler beendet das Spiel. */
-const APP_VERSION = '1.6.29', APP_DATE = '28.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
+const APP_VERSION = '1.6.30', APP_DATE = '28.11.2026'; // bei jedem Update erhöhen + CHANGELOG.md ergänzen
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
@@ -48,8 +48,10 @@ const sharedTheme = {
 
 const opt = {
   pool: LS.get('pool', 'all'), diff: LS.get('diff', 'normal'), mode: LS.get('mode', 'show'),
-  auto: LS.get('auto', true), sfx: LS.get('sfx', true), vol: LS.get('vol', 80), muted: false, theme: sharedTheme.get(),
+  auto: LS.get('auto', true), vol: LS.get('vol', 80), muted: false, theme: sharedTheme.get(),
 };
+// Töne gelten für alle Spiele und werden in der Jukebox eingestellt (Prefs in js/profile.js)
+Object.defineProperty(opt, 'sfx', { get: () => Prefs.sfx, enumerable: true });
 if (!POOL_NAMES[opt.pool]) opt.pool = 'all';
 if (!DIFF[opt.diff]) opt.diff = 'normal';
 if (!MODE_NAMES[opt.mode]) opt.mode = 'show';
@@ -509,8 +511,7 @@ function applyTheme() {
 }
 function renderSettings() {
   $('#setAuto').checked = !!opt.auto;
-  $('#setSfx').checked = !!opt.sfx;
-  $('#subHelp').textContent = [opt.auto ? 'Autoplay an' : 'Autoplay aus', opt.sfx ? '' : 'Töne aus'].filter(Boolean).map(s => tx(s)).join(' · ');
+  $('#subHelp').textContent = [opt.auto ? 'Autoplay an' : 'Autoplay aus'].map(s => tx(s)).join(' · ');
   $('#subDesign').textContent = tx((THEMES.find(x => x[0] === opt.theme) || THEMES[0])[1]);
   $('#langSel').innerHTML = langOptions();
   const st = Sync.view('oon.stats', LS.get('stats', null)); // alle verbundenen Geräte zusammen
@@ -615,7 +616,6 @@ $('#profEmoji').onclick = () => Profile.pick(e => { $('#profEmoji').textContent 
 $('#profName').oninput = () => Profile.set({ name: $('#profName').value });
 $('#profName').onkeydown = e => { if (e.key === 'Enter') $('#profName').blur(); };
 $('#setAuto').onchange = e => { opt.auto = e.target.checked; LS.set('auto', opt.auto); renderSettings(); };
-$('#setSfx').onchange = e => { opt.sfx = e.target.checked; LS.set('sfx', opt.sfx); renderSettings(); sound('ok'); };
 $('#vol').oninput = e => { opt.vol = +e.target.value; opt.muted = false; LS.set('vol', opt.vol); applyVol(); };
 $('#volMute').onclick = () => { opt.muted = !opt.muted; applyVol(); };
 $('#themeRow').onclick = e => {

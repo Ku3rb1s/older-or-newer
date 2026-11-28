@@ -1,5 +1,8 @@
 # Neuerungen
 
+## 1.6.30 – 28.11.2026
+- Töne und Vibration stellst du jetzt einmal in der Jukebox ein – für alle Spiele
+
 ## 1.6.29 – 28.11.2026
 - Vorbereitung für die Jukebox-App fürs iPhone: Dort fällt „Als App installieren“ weg
 

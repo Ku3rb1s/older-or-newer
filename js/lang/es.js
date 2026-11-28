@@ -85,7 +85,6 @@
     "Jeder neue Song startet sofort": "Cada canción nueva empieza al momento",
     "Jedes Jahr ist das der ersten Veröffentlichung, abgeglichen mit MusicBrainz – nicht das Jahr von Best-of-Alben oder Remastern.": "Cada año es el del lanzamiento original, comprobado con MusicBrainz, no el de un recopilatorio o una remasterización.",
     "Keine Vorschau": "Sin avance",
-    "Kurze Töne bei Treffer und Fehler, Konfetti bei neuem Rekord": "Sonidos cortos al acertar y fallar, confeti con un nuevo récord",
     "Lade Songs…": "Cargando canciones…",
     "Längste Serie": "Racha más larga",
     "Längste Serie {n}": "Racha más larga {n}",
@@ -137,7 +136,6 @@
     "Tippe auf „Teilen“": "Toca «Compartir»",
     "Tippe auf das Cover, um abzuspielen": "Toca la portada para reproducir",
     "Titel erst nach dem Tipp": "título tras responder",
-    "Töne & Konfetti": "Sonidos y confeti",
     "Töne aus": "Sonidos desactivados",
     "unbekannt": "desconocido",
     "Version": "Versión",
@@ -167,5 +165,7 @@
     "Löschen": "Borrar",
     // Adventskalender
     "Aus dem Adventskalender": "Del calendario de Adviento",
+    // Töne und Vibration (Jukebox)
+    "Töne und Vibration stellst du in der Jukebox ein.": "Los sonidos y la vibración se ajustan en la Jukebox.",
   },
 };

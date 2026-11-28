@@ -85,7 +85,6 @@
     "Jeder neue Song startet sofort": "Hver nye sang starter med en gang",
     "Jedes Jahr ist das der ersten Veröffentlichung, abgeglichen mit MusicBrainz – nicht das Jahr von Best-of-Alben oder Remastern.": "Hvert årstall er fra første utgivelse, kontrollert mot MusicBrainz – ikke året for et best of-album eller en remaster.",
     "Keine Vorschau": "Ingen forhåndsvisning",
-    "Kurze Töne bei Treffer und Fehler, Konfetti bei neuem Rekord": "Korte lyder ved treff og feil, konfetti ved ny rekord",
     "Lade Songs…": "Laster sanger …",
     "Längste Serie": "Lengste rekke",
     "Längste Serie {n}": "Lengste rekke {n}",
@@ -137,7 +136,6 @@
     "Tippe auf „Teilen“": "Trykk på «Del»",
     "Tippe auf das Cover, um abzuspielen": "Trykk på coveret for å spille av",
     "Titel erst nach dem Tipp": "tittel etter svaret",
-    "Töne & Konfetti": "Lyder og konfetti",
     "Töne aus": "Lyder av",
     "unbekannt": "ukjent",
     "Version": "Versjon",
@@ -167,5 +165,7 @@
     "Löschen": "Slett",
     // Adventskalender
     "Aus dem Adventskalender": "Fra julekalenderen",
+    // Töne und Vibration (Jukebox)
+    "Töne und Vibration stellst du in der Jukebox ein.": "Lyder og vibrasjon stiller du inn i Jukeboxen.",
   },
 };
